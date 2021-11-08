@@ -107,7 +107,11 @@ namespace Platformer.Mechanics
         protected override void ComputeVelocity()
         {
             if (flipAfterDrag)
+            {
                 spriteRenderer.flipX = !spriteRenderer.flipX;
+                flipAfterDrag = false;
+            }
+
             //Flip horizontal move
             if (move.x > 0.1f)
                 spriteRenderer.flipX = false;
@@ -153,7 +157,7 @@ namespace Platformer.Mechanics
             animator.SetBool("wallJump", JumpedOff);
             animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
             if (animator.GetBool("dragging") && !IsDragging)
-                flipAfterDrag=true
+                flipAfterDrag = true;
             animator.SetBool("dragging", IsDragging);
             targetVelocity = move * maxSpeed;
         }
