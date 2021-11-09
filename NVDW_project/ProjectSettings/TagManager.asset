@@ -5,14 +5,15 @@ TagManager:
   serializedVersion: 2
   tags:
   - TutorialRequirement
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
-  - 
+  - Player
   - 
   - 
   - 

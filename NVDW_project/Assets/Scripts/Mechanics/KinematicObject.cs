@@ -115,7 +115,8 @@ namespace Platformer.Mechanics
                 velocity.x= targetVelocity.x;
             else
                 velocity.x = 0.95f * velocity.x + 0.05f * targetVelocity.x;
-
+            if (velocity.x * currentNormal.x > 0)
+                IsDragging = false;
             IsGrounded = false;
 
 
@@ -149,8 +150,6 @@ namespace Platformer.Mechanics
                     if (currentNormal.y > minGroundNormalY)
                     {
                         IsGrounded = true;
-
-
                         IsDragging = false;
                         // if moving up, change the groundNormal to new surface normal.
                         if (yMovement)
