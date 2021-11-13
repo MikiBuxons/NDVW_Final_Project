@@ -8,12 +8,13 @@ public class RinoBehaviour : MonoBehaviour
     [Header("Pathfinding")] 
     public float pathUpdateSeconds = 0.5f;
     public Vector2 force;
+    public Vector2 direction;
     [Header("Physics")]
     public float walkSpeed;
     public int hitsToDie = 2;
     public float nextWaypointDistance = 3f;
-    public float jumpNodeHeightRequirement = 0.5f;
-    public float jumpModifier = 0.3f;
+    public float jumpNodeHeightRequirement = 0.8f;
+    public float jumpModifier = 2.0f;
     public float jumpCheckOffset = 0.2f;
 
     [Header("Custom Behaviour")] 
@@ -25,8 +26,7 @@ public class RinoBehaviour : MonoBehaviour
     [Header("Ground & Walls check")]
     public Transform groundCheckPos;
     public LayerMask groundLayer;
-    public Collider2D bodyCollider;
-    
+
 
     [HideInInspector] public bool mustPatrol = true;
     [HideInInspector] public bool isHit = false;
@@ -79,7 +79,7 @@ public class RinoBehaviour : MonoBehaviour
 
     void Patrol()
     {
-        if (mustTurn || bodyCollider.IsTouchingLayers(groundLayer))
+        if (mustTurn)
         {
             Flip();
         }
@@ -89,7 +89,7 @@ public class RinoBehaviour : MonoBehaviour
 
     void Attack()
     {
-        float runSpeed = walkSpeed * 1f;
+        float runSpeed = Mathf.Abs(walkSpeed) * 14f;
         
         if (path == null) {return;}
         
@@ -99,8 +99,8 @@ public class RinoBehaviour : MonoBehaviour
         }
 
         //Direction calculation
-        Vector2 direction = ((Vector2) path.vectorPath[currentWaypoint] - rb.position).normalized;
-        force = direction * runSpeed * Time.deltaTime;
+        direction = ((Vector2) path.vectorPath[currentWaypoint] - rb.position).normalized;
+        force = direction * runSpeed;
         
         //Jump
         if (jumpEnabled && isGrounded)
@@ -125,12 +125,12 @@ public class RinoBehaviour : MonoBehaviour
         // Direction graphics handling
         if (directionLookEnabled)
         {
-            if (force.x < 0.1f)
-            {
-                transform.localScale = new Vector3(-1f * Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-            }else if (force.x > -0.1f)
+            if (force.x > 0.01f)
             {
                 transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            }else if (force.x < -0.01f)
+            {
+                transform.localScale = new Vector3(-1f * Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
             }
         }
     }
