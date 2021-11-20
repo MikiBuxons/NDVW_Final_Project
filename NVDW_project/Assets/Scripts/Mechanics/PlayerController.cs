@@ -22,6 +22,7 @@ namespace Platformer.Mechanics
         /// Max horizontal speed of the player.
         /// </summary>
         public float maxSpeed = 7;
+
         /// <summary>
         /// Initial jump velocity at the start of a jump.
         /// </summary>
@@ -29,18 +30,23 @@ namespace Platformer.Mechanics
 
         public JumpState jumpState = JumpState.Grounded;
         private bool stopJump;
+
         private bool flipAfterDrag = false;
-        /*internal new*/ public Collider2D collider2d;
-        /*internal new*/ public AudioSource audioSource;
+
+        /*internal new*/
+        public Collider2D collider2d;
+
+        /*internal new*/
+        public AudioSource audioSource;
         public Health health;
-        public bool controlEnabled = true;
+
 
         public bool jump;
         public Vector2 move;
         SpriteRenderer spriteRenderer;
         internal Animator animator;
         readonly PlatformerModel model = Simulation.GetModel<PlatformerModel>();
-        
+
         public Bounds Bounds => collider2d.bounds;
 
         void Awake()
@@ -54,10 +60,17 @@ namespace Platformer.Mechanics
 
         protected override void Update()
         {
+            if (animator.GetCurrentAnimatorStateInfo(0).IsTag("hurt") ||
+                animator.GetCurrentAnimatorStateInfo(0).IsTag("dead") ||
+                animator.GetCurrentAnimatorStateInfo(0).IsTag("spawn"))
+                controlEnabled = false;
+            else
+                controlEnabled = true;
             if (controlEnabled)
             {
                 move.x = Input.GetAxis("Horizontal");
-                if (jumpState == JumpState.Grounded && Input.GetButtonDown("Jump") || IsDragging && Input.GetButtonDown("Jump"))
+                if (jumpState == JumpState.Grounded && Input.GetButtonDown("Jump") ||
+                    IsDragging && Input.GetButtonDown("Jump"))
                     jumpState = JumpState.PrepareToJump;
                 else if (Input.GetButtonUp("Jump"))
                 {
@@ -69,6 +82,8 @@ namespace Platformer.Mechanics
             {
                 move.x = 0;
             }
+            
+    
             UpdateJumpState();
             base.Update();
         }
@@ -89,6 +104,7 @@ namespace Platformer.Mechanics
                         Schedule<PlayerJumped>().player = this;
                         jumpState = JumpState.InFlight;
                     }
+
                     break;
                 case JumpState.InFlight:
                     if (IsGrounded)
@@ -96,6 +112,7 @@ namespace Platformer.Mechanics
                         Schedule<PlayerLanded>().player = this;
                         jumpState = JumpState.Landed;
                     }
+
                     break;
                 case JumpState.Landed:
                     jumpState = JumpState.Grounded;

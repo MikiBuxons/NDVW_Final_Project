@@ -37,11 +37,15 @@ public class SlimeHit : MonoBehaviour
                     enemyParent.isHit = true;
                     anim.SetBool("isDead", true);
                 }
-                player.Bounce(-player.velocity.y);
+                player.Bounce(5);
             }
             else
             {
-                player.Bounce(-player.velocity);
+                enemyParent.isBouncing = true;
+                enemyParent.Bounce(10*(enemyParent.transform.position-player.transform.position).normalized);
+                player.Bounce(-5*(enemyParent.transform.position-player.transform.position).normalized);
+                player.health.Decrement();
+                player.animator.SetTrigger("hurt");
             }
             
         }

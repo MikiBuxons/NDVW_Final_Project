@@ -55,6 +55,14 @@ public class RinoBehaviour : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Bounce the objects velocity in a direction.
+    /// </summary>
+    /// <param name="dir"></param>
+    public void Bounce(Vector2 dir)
+    {
+        rb.velocity=dir;
+    }
     private void FixedUpdate()
     {
         if (mustPatrol && !isHit)

@@ -30,7 +30,7 @@ public class TrunkBehaviour : MonoBehaviour
     [HideInInspector] public bool inRange = false;
     [HideInInspector] public Transform target;
     [HideInInspector] public Animator anim;
-    
+    public bool isBouncing = false;
     private bool mustTurn;
     private bool inBorder;
     private Rigidbody2D rb;
@@ -46,7 +46,23 @@ public class TrunkBehaviour : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
+    /// <summary>
+    /// Bounce the object's vertical velocity.
+    /// </summary>
+    /// <param name="value"></param>
+    public void Bounce(float value)
+    {
+        rb.AddForce(Vector2.up*value);
+    }
 
+    /// <summary>
+    /// Bounce the objects velocity in a direction.
+    /// </summary>
+    /// <param name="dir"></param>
+    public void Bounce(Vector2 dir)
+    {
+        rb.AddForce(dir);
+    }
     private void FixedUpdate()
     {
         if (mustPatrol && !isHit)
@@ -63,7 +79,9 @@ public class TrunkBehaviour : MonoBehaviour
         if (inRange && followEnabled) Attack();
 
         // Patrol if the player is not detected
-        if (mustPatrol && !isHit) Patrol();
+        if (mustPatrol && !isHit && !isBouncing) Patrol();
+
+        if (rb.velocity.magnitude < 0.1f) isBouncing = false;
     }
 
     void Patrol()

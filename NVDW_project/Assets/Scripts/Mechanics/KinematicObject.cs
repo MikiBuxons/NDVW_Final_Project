@@ -32,7 +32,7 @@ namespace Platformer.Mechanics
         public bool IsGrounded { get; private set; }
         public bool IsDragging;
         public bool JumpedOff=false;
-
+        public bool controlEnabled = true;
         protected Vector2 targetVelocity;
         protected Vector2 groundNormal;
         public Vector2 currentNormal;
@@ -111,11 +111,11 @@ namespace Platformer.Mechanics
             else
                 velocity += Physics2D.gravity * Time.deltaTime;
 
-            if (!JumpedOff)
+            if (!JumpedOff && controlEnabled) 
                 velocity.x= targetVelocity.x;
                 //velocity.x = 0.95f * velocity.x + 0.05f * targetVelocity.x;
-            else
-                velocity.x = 0.95f * velocity.x + 0.05f * targetVelocity.x;
+            else if (JumpedOff)
+                velocity.x = 0.97f * velocity.x + 0.03f * targetVelocity.x;
             if (velocity.x * currentNormal.x > 0)
                 IsDragging = false;
             IsGrounded = false;

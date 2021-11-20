@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Newtonsoft.Json.Serialization;
 using UnityEngine;
 using Object = System.Object;
 
@@ -13,7 +14,7 @@ public class SlimeBehaviour : MonoBehaviour
     public bool mustTurn;
     [HideInInspector] public bool isHit;
     private Animator anim;
-    
+    public bool isBouncing = false;
     private Rigidbody2D rb;
     public Transform groundCheckPos;
     public LayerMask groundLayer;
@@ -29,7 +30,23 @@ public class SlimeBehaviour : MonoBehaviour
         isHit = false;
         anim = GetComponent<Animator>();
     }
+    /// <summary>
+    /// Bounce the object's vertical velocity.
+    /// </summary>
+    /// <param name="value"></param>
+    public void Bounce(float value)
+    {
+        rb.AddForce(Vector2.up*value);
+    }
 
+    /// <summary>
+    /// Bounce the objects velocity in a direction.
+    /// </summary>
+    /// <param name="dir"></param>
+    public void Bounce(Vector2 dir)
+    {
+        rb.velocity=dir;
+    }
     private void FixedUpdate()
     {
         if (mustPatrol && !isHit)
@@ -41,10 +58,12 @@ public class SlimeBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (mustPatrol && !isHit)
+        if (mustPatrol && !isHit && !isBouncing)
         {
             Patrol();
         }
+        if (rb.velocity.magnitude<0.1f)
+            isBouncing = false;
     }
 
     void Patrol()
