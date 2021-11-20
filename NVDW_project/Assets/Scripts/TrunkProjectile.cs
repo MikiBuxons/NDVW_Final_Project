@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Platformer.Mechanics;
 using UnityEngine;
 
 public class TrunkProjectile : MonoBehaviour
@@ -29,7 +30,10 @@ public class TrunkProjectile : MonoBehaviour
             Debug.Log(hitinfo.collider.tag);
             if (hitinfo.collider.CompareTag("Player"))
             {
-                Debug.Log("Enemy must take damage");
+                var player=hitinfo.collider.GetComponent<PlayerController>();
+                player.Bounce(this.transform.right * 3 );
+                player.health.Decrement();
+                player.animator.SetTrigger("hurt");
             }
             DestructionAnimation();
         }

@@ -56,6 +56,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0}
   IsDragging: 0
   JumpedOff: 0
+  controlEnabled: 1
   currentNormal: {x: 0, y: 0}
   jumpAudio: {fileID: 8300000, guid: 67975c08d56ceb147bad38572d805aa8, type: 3}
   respawnAudio: {fileID: 8300000, guid: e18959d46b63f3c4c8cc020a433cf848, type: 3}
@@ -66,7 +67,6 @@ MonoBehaviour:
   collider2d: {fileID: 0}
   audioSource: {fileID: 0}
   health: {fileID: 0}
-  controlEnabled: 1
   jump: 0
   move: {x: 0, y: 0}
 --- !u!212 &212064061491315838
@@ -283,7 +283,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.03}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -294,7 +294,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.15, y: 0.25}
+  m_Size: {x: 0.15, y: 0.2}
   m_EdgeRadius: 0
 --- !u!114 &838423050
 MonoBehaviour:

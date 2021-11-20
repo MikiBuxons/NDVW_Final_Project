@@ -270,7 +270,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8458147460064593475
 Transform:
   m_ObjectHideFlags: 0
@@ -304,7 +304,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 2
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -345,12 +345,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathUpdateSeconds: 0.5
   force: {x: 0, y: 0}
+  direction: {x: 0, y: 0}
   walkSpeed: 1
   hitsToDie: 2
-  nextWaypointDistance: 3
-  jumpNodeHeightRequirement: 0.5
-  jumpModifier: 0.3
-  jumpCheckOffset: 0.2
+  nextWaypointDistance: 1
+  jumpNodeHeightRequirement: 0.8
+  jumpModifier: 2
+  jumpCheckOffset: 0.5
   followEnabled: 1
   jumpEnabled: 1
   directionLookEnabled: 1
@@ -358,7 +359,6 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  bodyCollider: {fileID: 0}
   mustPatrol: 0
   isHit: 0
   inRange: 0
