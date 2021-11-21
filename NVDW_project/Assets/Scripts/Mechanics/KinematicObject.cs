@@ -107,7 +107,11 @@ namespace Platformer.Mechanics
         {
             //if already falling, fall faster than the jump speed, otherwise use normal gravity.
             if (velocity.y < 0)
+            {
+                if (IsDragging)
+                    velocity.y -= velocity.y * drag;
                 velocity += gravityModifier * Physics2D.gravity * Time.deltaTime;
+            }
             else
                 velocity += Physics2D.gravity * Time.deltaTime;
 
@@ -175,8 +179,7 @@ namespace Platformer.Mechanics
                         IsDragging = true;
                         JumpedOff = false;
 
-                        if (velocity.y<0)
-                            velocity.y -= velocity.y * drag;
+ 
                     }
                     //remove shellDistance from actual move distance.
                     var modifiedDistance = hitBuffer[i].distance - shellRadius;

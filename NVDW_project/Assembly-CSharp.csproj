@@ -54,12 +54,15 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\SlimeScrips\SlimeHit.cs" />
      <Compile Include="Assets\Scripts\TrunkScripts\TrunkView.cs" />
+     <Compile Include="Assets\Scripts\SlimeScrips\SlimeDamage.cs" />
      <Compile Include="Assets\Scripts\Mechanics\SpawnPoint.cs" />
+     <Compile Include="Assets\Scripts\RinoScripts\RinoDamage.cs" />
      <Compile Include="Assets\Scripts\TrunkScripts\TrunkHit.cs" />
      <Compile Include="Assets\Scripts\Gameplay\PlayerEnemyCollision.cs" />
      <Compile Include="Assets\Scripts\Core\HeapQueue.cs" />
      <Compile Include="Assets\Scripts\View\ParallaxLayer.cs" />
      <Compile Include="Assets\Scripts\Mechanics\VictoryZone.cs" />
+     <Compile Include="Assets\Scripts\SlimeScrips\SlimeAttack.cs" />
      <Compile Include="Assets\Scripts\Mechanics\PlayAudioClip.cs" />
      <Compile Include="Assets\Scripts\Gameplay\PlayerTokenCollision.cs" />
      <Compile Include="Assets\Scripts\RinoScripts\RinoHit.cs" />
@@ -88,6 +91,7 @@
      <Compile Include="Assets\Scripts\Mechanics\TokenController.cs" />
      <Compile Include="Assets\Scripts\TrunkScripts\TrunkBehaviour.cs" />
      <Compile Include="Assets\Mod Assets\Mod Resources\Scripts\Platformer\SimpleTrigger.cs" />
+     <Compile Include="Assets\Scripts\TrunkScripts\TrunkAttack.cs" />
      <Compile Include="Assets\Scripts\Gameplay\PlayerEnteredVictoryZone.cs" />
      <Compile Include="Assets\Scripts\SlimeScrips\SlimeBehaviour.cs" />
      <Compile Include="Assets\Scripts\TrunkProjectile.cs" />
@@ -95,6 +99,7 @@
      <Compile Include="Assets\Scripts\Mechanics\DeathZone.cs" />
      <Compile Include="Assets\Mod Assets\Mod Resources\Scripts\Platformer\PlatformerSpeedPad.cs" />
      <Compile Include="Assets\Scripts\Gameplay\PlayerJumped.cs" />
+     <Compile Include="Assets\Scripts\RinoScripts\RinoAttack.cs" />
      <Compile Include="Assets\Mod Assets\Mod Resources\Scripts\Backend\TemplateEditorDetection.cs" />
      <Compile Include="Assets\Scripts\Gameplay\PlayerEnteredDeathZone.cs" />
      <Compile Include="Assets\Scripts\Core\Simulation.Event.cs" />
