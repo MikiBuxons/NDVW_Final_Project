@@ -9,21 +9,39 @@ public class PlantEnemy : MonoBehaviour
    public Animator animator;
    public GameObject bulletPrefab;
    public Transform lauchSpawnPoint;
+   private bool inRange;
 
     private void Start() {
         waitedTime = waitTimeToAttack;
     }
 
     private void Update() {
-        if (waitedTime <= 0) {
-            waitedTime = waitTimeToAttack;
-            animator.Play("Attack");
+        if (inRange) {
+            if (waitedTime <= 0) {
+                waitedTime = waitTimeToAttack;
+                animator.Play("Attack");
 
-        } else {
-            waitedTime -= Time.deltaTime;
+            } else {
+                waitedTime -= Time.deltaTime;
+            }
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.CompareTag("Player"))
+        {   
+           inRange = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collider)
+    {
+        if (collider.gameObject.CompareTag("Player"))
+        {
+            inRange = false;
+        }
+    }
 
     public void LaunchBullet() {
         GameObject newBullet;
