@@ -9,7 +9,8 @@ namespace Platformer.Mechanics
     /// Represebts the current vital statistics of some game entity.
     /// </summary>
     public class Health : MonoBehaviour
-    {
+    {   
+        public GameObject[] hearts;
         /// <summary>
         /// The maximum hit points for the entity.
         /// </summary>
@@ -37,10 +38,15 @@ namespace Platformer.Mechanics
         public void Decrement()
         {
             currentHP = Mathf.Clamp(currentHP - 1, 0, maxHP);
+            hearts[currentHP].gameObject.SetActive(false);
             if (currentHP == 0)
             {
                 var ev = Schedule<HealthIsZero>();
                 ev.health = this;
+
+                for (int i = 0; i < hearts.Length; i++) {
+                    hearts[i].gameObject.SetActive(true);
+                }
             }
         }
 
