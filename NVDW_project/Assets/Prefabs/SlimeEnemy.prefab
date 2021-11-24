@@ -156,6 +156,7 @@ MonoBehaviour:
   mustPatrol: 0
   mustTurn: 0
   isHit: 0
+  isBouncing: 0
   groundCheckPos: {fileID: 7542552131019684848}
   groundLayer:
     serializedVersion: 2
