@@ -47,6 +47,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\PlantScript\PlantEnemy.cs" />
      <Compile Include="Assets\Scripts\SlimeScrips\SlimeHit.cs" />
      <Compile Include="Assets\Scripts\TrunkScripts\TrunkView.cs" />
      <Compile Include="Assets\Scripts\SlimeScrips\SlimeDamage.cs" />
@@ -60,6 +61,7 @@
      <Compile Include="Assets\Scripts\Mechanics\VictoryZone.cs" />
      <Compile Include="Assets\Scripts\Mechanics\PlayAudioClip.cs" />
      <Compile Include="Assets\Scripts\Gameplay\PlayerTokenCollision.cs" />
+     <Compile Include="Assets\Scripts\PlantScript\BulletPlant.cs" />
      <Compile Include="Assets\Scripts\RinoScripts\RinoHit.cs" />
      <Compile Include="Assets\Scripts\Mechanics\GameController.cs" />
      <Compile Include="Assets\Scripts\Gameplay\EnablePlayerInput.cs" />
@@ -95,6 +97,7 @@
      <Compile Include="Assets\Scripts\Gameplay\PlayerJumped.cs" />
      <Compile Include="Assets\Mod Assets\Mod Resources\Scripts\Backend\TemplateEditorDetection.cs" />
      <Compile Include="Assets\Scripts\Gameplay\PlayerEnteredDeathZone.cs" />
+     <Compile Include="Assets\Scripts\JumpDamage.cs" />
      <Compile Include="Assets\Scripts\Core\Simulation.Event.cs" />
      <Compile Include="Assets\Scripts\RinoScripts\TriggerAreaCheck.cs" />
      <Compile Include="Assets\Scripts\Core\Fuzzy.cs" />
@@ -105,6 +108,7 @@
      <Compile Include="Assets\Scripts\UI\MetaGameController.cs" />
      <Compile Include="Assets\Scripts\TrunkScripts\TrunkAttack.cs" />
      <Compile Include="Assets\Scripts\SlimeScrips\SlimeAttack.cs" />
+     <Compile Include="Assets\Scripts\DamageObject.cs" />
      <Compile Include="Assets\Scripts\Core\Simulation.InstanceRegister.cs" />
      <Compile Include="Assets\Scripts\Gameplay\HealthIsZero.cs" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
@@ -349,13 +353,13 @@
  <HintPath>/Applications/Unity/Hub/Editor/2020.3.22f1/Unity.app/Contents/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll</HintPath>
  </Reference>
  <Reference Include="System.IO.Compression.FileSystem">
- <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.connect.share@4.1.1/Plugins/System.IO.Compression.FileSystem.dll</HintPath>
+ <HintPath>/Users/ericrosello/Desktop/MAI/NDVW/Project/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.connect.share@4.1.1/Plugins/System.IO.Compression.FileSystem.dll</HintPath>
  </Reference>
  <Reference Include="Pathfinding.Ionic.Zip.Reduced">
- <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project/NVDW_project/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+ <HintPath>/Users/ericrosello/Desktop/MAI/NDVW/Project/NDVW_Final_Project/NVDW_project/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
  </Reference>
  <Reference Include="Newtonsoft.Json">
- <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
+ <HintPath>/Users/ericrosello/Desktop/MAI/NDVW/Project/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>/Applications/Unity/Hub/Editor/2020.3.22f1/Unity.app/Contents/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -704,6 +708,11 @@
  </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Unity.2D.Tilemap.Extras.csproj">
+      <Project>{55B5CFC6-37AF-A82B-1169-ADD3EAA3B92A}</Project>
+      <Name>Unity.2D.Tilemap.Extras</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
     <ProjectReference Include="Unity.VSCode.Editor.csproj">
       <Project>{6BCD3DC0-7699-33A1-5E57-CE37A6B305A7}</Project>
       <Name>Unity.VSCode.Editor</Name>
@@ -787,6 +796,11 @@
     <ProjectReference Include="UnityEngine.UI.csproj">
       <Project>{410114E5-8334-9241-0BDF-129E3D101F70}</Project>
       <Name>UnityEngine.UI</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Tilemap.Extras.Editor.csproj">
+      <Project>{80C7571A-FF96-633D-4FB3-40FD1B0D16FA}</Project>
+      <Name>Unity.2D.Tilemap.Extras.Editor</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="Unity.2DPlatformer.Tutorials.csproj">

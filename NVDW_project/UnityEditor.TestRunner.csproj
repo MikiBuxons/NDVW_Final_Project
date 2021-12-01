@@ -72,8 +72,8 @@
      <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\TestLaunchers\RemotePlayerTestController.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\UnityTestProtocol\UtpDebuglogger.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\TestLaunchers\PlatformSetup\SwitchPlatformSetup.cs" />
-     <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\NUnitExtension\Attributes\AssetPipelineIgnore.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\TestLaunchers\PostbuildCleanupAttributeFinder.cs" />
+     <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\NUnitExtension\Attributes\AssetPipelineIgnore.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\GUI\Views\PlayModeTestListGUI.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\GUI\TestListBuilder\TestFilterSettings.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\Api\TestAdaptor.cs" />
@@ -436,7 +436,7 @@
  <HintPath>/Applications/Unity/Hub/Editor/2020.3.22f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
- <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
+ <HintPath>/Users/ericrosello/Desktop/MAI/NDVW/Project/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>/Applications/Unity/Hub/Editor/2020.3.22f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>

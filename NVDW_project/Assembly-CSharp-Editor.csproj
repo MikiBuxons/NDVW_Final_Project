@@ -277,28 +277,28 @@
  <HintPath>/Applications/Unity/Hub/Editor/2020.3.22f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Plastic.Newtonsoft.Json">
- <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.collab-proxy@1.13.5/Lib/Editor/PlasticSCM/Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+ <HintPath>/Users/ericrosello/Desktop/MAI/NDVW/Project/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.collab-proxy@1.13.5/Lib/Editor/PlasticSCM/Unity.Plastic.Newtonsoft.Json.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Plastic.Antlr3.Runtime">
- <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.collab-proxy@1.13.5/Lib/Editor/PlasticSCM/Unity.Plastic.Antlr3.Runtime.dll</HintPath>
+ <HintPath>/Users/ericrosello/Desktop/MAI/NDVW/Project/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.collab-proxy@1.13.5/Lib/Editor/PlasticSCM/Unity.Plastic.Antlr3.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="unityplastic">
- <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.collab-proxy@1.13.5/Lib/Editor/PlasticSCM/unityplastic.dll</HintPath>
+ <HintPath>/Users/ericrosello/Desktop/MAI/NDVW/Project/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.collab-proxy@1.13.5/Lib/Editor/PlasticSCM/unityplastic.dll</HintPath>
  </Reference>
  <Reference Include="System.IO.Compression.FileSystem">
- <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.connect.share@4.1.1/Plugins/System.IO.Compression.FileSystem.dll</HintPath>
+ <HintPath>/Users/ericrosello/Desktop/MAI/NDVW/Project/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.connect.share@4.1.1/Plugins/System.IO.Compression.FileSystem.dll</HintPath>
  </Reference>
  <Reference Include="Pathfinding.Ionic.Zip.Reduced">
- <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project/NVDW_project/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+ <HintPath>/Users/ericrosello/Desktop/MAI/NDVW/Project/NDVW_Final_Project/NVDW_project/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
  </Reference>
  <Reference Include="log4netPlastic">
- <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.collab-proxy@1.13.5/Lib/Editor/PlasticSCM/log4netPlastic.dll</HintPath>
+ <HintPath>/Users/ericrosello/Desktop/MAI/NDVW/Project/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.collab-proxy@1.13.5/Lib/Editor/PlasticSCM/log4netPlastic.dll</HintPath>
  </Reference>
  <Reference Include="Newtonsoft.Json">
- <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
+ <HintPath>/Users/ericrosello/Desktop/MAI/NDVW/Project/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
- <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
+ <HintPath>/Users/ericrosello/Desktop/MAI/NDVW/Project/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>/Applications/Unity/Hub/Editor/2020.3.22f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -665,6 +665,11 @@
       <Name>UnityEditor.TestRunner</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
+    <ProjectReference Include="Unity.2D.Tilemap.Extras.csproj">
+      <Project>{55B5CFC6-37AF-A82B-1169-ADD3EAA3B92A}</Project>
+      <Name>Unity.2D.Tilemap.Extras</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
     <ProjectReference Include="Unity.VSCode.Editor.csproj">
       <Project>{6BCD3DC0-7699-33A1-5E57-CE37A6B305A7}</Project>
       <Name>Unity.VSCode.Editor</Name>
@@ -748,6 +753,11 @@
     <ProjectReference Include="UnityEngine.UI.csproj">
       <Project>{410114E5-8334-9241-0BDF-129E3D101F70}</Project>
       <Name>UnityEngine.UI</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Tilemap.Extras.Editor.csproj">
+      <Project>{80C7571A-FF96-633D-4FB3-40FD1B0D16FA}</Project>
+      <Name>Unity.2D.Tilemap.Extras.Editor</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="Unity.2DPlatformer.Tutorials.csproj">
