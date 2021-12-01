@@ -101,6 +101,7 @@
      <Compile Include="Assets\Scripts\Core\Simulation.Event.cs" />
      <Compile Include="Assets\Scripts\RinoScripts\TriggerAreaCheck.cs" />
      <Compile Include="Assets\Scripts\Core\Fuzzy.cs" />
+     <Compile Include="Assets\Scripts\PCG.cs" />
      <Compile Include="Assets\Scripts\Mechanics\PatrolPath.cs" />
      <Compile Include="Assets\Scripts\Model\PlatformerModel.cs" />
      <Compile Include="Assets\Scripts\Gameplay\EnemyDeath.cs" />
