@@ -495,3 +495,4 @@ Received Import Request.
 Start importing Assets/Prefabs/RinoEnemy.prefab using Guid(bcf671dfa8557034fb40e1cd7dc9fc7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cbfa0a9405c73101910daeabf75b9ad4') in 0,066981 seconds 
   Import took 0,072179 seconds .
 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
