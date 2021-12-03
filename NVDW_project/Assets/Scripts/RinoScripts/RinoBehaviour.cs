@@ -73,7 +73,7 @@ public class RinoBehaviour : MonoBehaviour
       
         // set the variable to jump
         //Debug.DrawRay(transform.position, Vector3.down * 0.2f, Color.red);
-        if (Physics2D.Raycast(transform.position, Vector3.down, jumpCheckOffset) ) isGrounded = true;
+        if (Physics2D.Raycast(transform.position, Vector3.down, jumpCheckOffset, groundLayer) ) isGrounded = true;
         else isGrounded = false;
         
         // Attack if the user is in range
