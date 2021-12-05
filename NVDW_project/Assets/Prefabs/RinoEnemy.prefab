@@ -270,7 +270,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8458147460064593475
 Transform:
   m_ObjectHideFlags: 0
@@ -304,9 +304,9 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 2
+  m_LinearDrag: 0.1
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -350,8 +350,8 @@ MonoBehaviour:
   hitsToDie: 2
   nextWaypointDistance: 1
   jumpNodeHeightRequirement: 0.8
-  jumpModifier: 2
-  jumpCheckOffset: 0.5
+  jumpModifier: 15
+  jumpCheckOffset: 0.2
   followEnabled: 1
   jumpEnabled: 1
   directionLookEnabled: 1
