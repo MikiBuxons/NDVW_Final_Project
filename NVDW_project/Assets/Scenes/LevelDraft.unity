@@ -1209,7 +1209,7 @@ MonoBehaviour:
   confinement: {fileID: 712277757}
   background: {fileID: 2092322893}
   deathZone: {fileID: 1746191690}
-  mapSizeX: 100
+  mapSizeX: 150
   mapSizeY: 25
   maxRoomSize: 8
   minJump: 2

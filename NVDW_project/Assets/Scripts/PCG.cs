@@ -147,7 +147,6 @@ public class PCG : MonoBehaviour
             }
         }
         current = GenRoom(current, mapSizeX - current.x - 1); // always finish in room to place goal
-        Debug.Log(current);
     }
 
     Vector3Int GenAddDot(Vector3Int current, int dist = 1) // helps fitting
