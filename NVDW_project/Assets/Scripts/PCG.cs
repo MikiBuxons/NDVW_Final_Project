@@ -5,6 +5,7 @@ using UnityEngine.Tilemaps;
 public class PCG : MonoBehaviour
 {
     public RuleTile tile;
+    public RuleTile limitTile;
 
     public Tilemap terrain;
 
@@ -12,6 +13,10 @@ public class PCG : MonoBehaviour
 
     public Transform spawnPoint;
     public Transform player;
+
+    public PolygonCollider2D confinement;
+    public SpriteRenderer background;
+    public BoxCollider2D deathZone;
 
     public int mapSizeX = 100;
     public int mapSizeY = 25;
@@ -32,7 +37,15 @@ public class PCG : MonoBehaviour
 
     void Start()
     {
-        GenTerrain();
+        var spawn = new Vector3Int(2, Random.Range(3, mapSizeY - 5), 0);
+        spawnPoint.position = terrain.CellToWorld(spawn);
+        spawnPoint.position = new Vector3(spawnPoint.position.x, spawnPoint.position.y + 3, 0);
+
+        map = new float[mapSizeX, mapSizeY];
+
+        var current = new Vector3Int(Random.Range(minRoomSize, maxRoomSize), spawn.y - 1, 0);
+
+        GenTerrain(current);
         FillTerrain();
 
         for (var x = 0; x < map.GetLength(0); x++)
@@ -43,8 +56,28 @@ public class PCG : MonoBehaviour
                 {
                     terrain.SetTile(new Vector3Int(x, y, 0), tile);
                 }
+                if (x == 0 || x == map.GetLength(0) - 1)
+                {
+                    terrain.SetTile(new Vector3Int(x + ((x == 0) ? -1 : 0), y, 0), limitTile);
+                }
             }
         }
+
+        var botLeft = terrain.CellToWorld(new Vector3Int(0, 0, 0));
+        var botRight = terrain.CellToWorld(new Vector3Int(mapSizeX-1, 0, 0));
+        var topRight = terrain.CellToWorld(new Vector3Int(mapSizeX-1, mapSizeY, 0));
+        var topLeft = terrain.CellToWorld(new Vector3Int(0, mapSizeY, 0));
+
+        Vector2[] confLims = { botLeft, botRight, topRight, topLeft };
+
+        confinement.pathCount = 1;
+        confinement.SetPath(0, confLims);
+
+        background.size = new Vector2(mapSizeX, mapSizeY)/2;
+        background.transform.position += new Vector3(mapSizeX, mapSizeY, 0)/2;
+
+        deathZone.size = new Vector2(mapSizeX, 10);
+        deathZone.transform.position += new Vector3(mapSizeX/2, -5, 0);
 
         player.position = spawnPoint.position;
     }
@@ -68,16 +101,9 @@ public class PCG : MonoBehaviour
         }
     }
 
-    void GenTerrain()
+    void GenTerrain(Vector3Int current)
     {
-        var spawn = new Vector3Int(2, Random.Range(3, mapSizeY - 5), 0);
-        spawnPoint.position = terrain.CellToWorld(spawn);
-        spawnPoint.position = new Vector3(spawnPoint.position.x, spawnPoint.position.y + 3, 0);
-
-        map = new float[mapSizeX, mapSizeY];
-
         // initial room
-        var current = new Vector3Int(Random.Range(minRoomSize, maxRoomSize), spawn.y - 1, 0);
         for (var x = 0; x < current.x; x++)
         {
             map[x, current.y] = 1;
