@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using Pathfinding;
 
 public class PCG : MonoBehaviour
 {
@@ -79,7 +80,17 @@ public class PCG : MonoBehaviour
         deathZone.size = new Vector2(mapSizeX, 10);
         deathZone.transform.position += new Vector3(mapSizeX/2, -5, 0);
 
+        foreach (GridGraph graph in AstarPath.active.data.GetUpdateableGraphs())
+        {
+            var w = mapSizeX / 0.2;
+            var h = mapSizeY / 0.2;
+            graph.SetDimensions((int)w, (int)h, 0.2f);
+            graph.center = new Vector3(mapSizeX / 2, (mapSizeY / 2) + 0, 0);
+        }
+
         player.position = spawnPoint.position;
+
+        Invoke("Scan", 2.0f);
     }
 
     void FillTerrain()
@@ -233,6 +244,11 @@ public class PCG : MonoBehaviour
 
     void Update()
     {
-        
+
+    }
+
+    void Scan()
+    {
+        AstarPath.active.Scan();
     }
 }
