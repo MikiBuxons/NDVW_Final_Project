@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using Pathfinding;
+using System.Linq;
 
 public class PCG : MonoBehaviour
 {
@@ -36,6 +37,16 @@ public class PCG : MonoBehaviour
     private int minWallJumpDist = 4;
     public int maxWallJumpHeight = 10;
 
+    public int minTilesEnem = 2;
+    public int spawnEnemFactor = 10;
+    public List<Enemy> groundEnemies;
+    [System.Serializable]
+    public class Enemy
+    {
+        public int prob;
+        public GameObject prefab;
+    }
+
     void Start()
     {
         var spawn = new Vector3Int(2, Random.Range(3, mapSizeY - 5), 0);
@@ -44,18 +55,35 @@ public class PCG : MonoBehaviour
 
         map = new float[mapSizeX, mapSizeY];
 
-        var current = new Vector3Int(Random.Range(minRoomSize, maxRoomSize), spawn.y - 1, 0);
 
-        GenTerrain(current);
+        // Build map
+        GenTerrain(spawn);
+        AddEnemies(spawn);
         FillTerrain();
 
+
+        // Build level from map content
         for (var x = 0; x < map.GetLength(0); x++)
         {
             for (var y = 0; y < map.GetLength(1); y++)
             {
-                if (map[x, y] != 0)
+                if (map[x, y] == 1 || map[x, y] == 2)
                 {
                     terrain.SetTile(new Vector3Int(x, y, 0), tile);
+                }
+                if (map[x, y] == 3)
+                {
+                    //terrain.SetTile(new Vector3Int(x, y, 0), limitTile);
+                    var enemSel = Random.Range(0, 100);
+                    foreach (var enem in Enumerable.Reverse(groundEnemies))
+                    {
+                        if (enemSel < enem.prob)
+                        {
+                            var pos = terrain.CellToWorld(new Vector3Int(x, y + 1, 0));
+                            Instantiate(enem.prefab, pos, Quaternion.identity);
+                        }
+                    }
+
                 }
                 if (x == 0 || x == map.GetLength(0) - 1)
                 {
@@ -64,6 +92,8 @@ public class PCG : MonoBehaviour
             }
         }
 
+
+        // Limits of the map
         var botLeft = terrain.CellToWorld(new Vector3Int(0, 0, 0));
         var botRight = terrain.CellToWorld(new Vector3Int(mapSizeX-1, 0, 0));
         var topRight = terrain.CellToWorld(new Vector3Int(mapSizeX-1, mapSizeY, 0));
@@ -80,6 +110,8 @@ public class PCG : MonoBehaviour
         deathZone.size = new Vector2(mapSizeX, 10);
         deathZone.transform.position += new Vector3(mapSizeX/2, -5, 0);
 
+
+        // Astar grid configuration
         foreach (GridGraph graph in AstarPath.active.data.GetUpdateableGraphs())
         {
             var w = mapSizeX / 0.2;
@@ -112,8 +144,39 @@ public class PCG : MonoBehaviour
         }
     }
 
-    void GenTerrain(Vector3Int current)
+    void AddEnemies(Vector3Int spawn)
     {
+        var start = spawn.y + 3;
+        for (var y = 0; y < map.GetLength(1); y++)
+        {
+            var count = 0;
+            for (var x = start; x < map.GetLength(0); x++)
+            {
+                if (map[x, y] == 1)
+                {
+                    count++;
+                }
+                else
+                {
+                    count = 0;
+                }
+                if (count > minTilesEnem)
+                {
+                    var enem = Random.Range(0, 100);
+                    if (enem < count * spawnEnemFactor)
+                    {
+                        map[x, y + 1] = 3;
+                        count = 0;
+                    }
+                }
+            }
+        }
+    }
+
+    void GenTerrain(Vector3Int spawn)
+    {
+        var current = new Vector3Int(Random.Range(minRoomSize, maxRoomSize), spawn.y - 1, 0);
+
         // initial room
         for (var x = 0; x < current.x; x++)
         {
