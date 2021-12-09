@@ -268,7 +268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waitTimeToAttack: 3
   animator: {fileID: 4233806550005729498}
-  bulletPrefab: {fileID: 7974931073887046546, guid: 53df548bf7c77448e90063fb556ba380,
+  bulletPrefab: {fileID: 7974931073887046546, guid: 6ff7e2adffe7c40fca15aa80760376e3,
     type: 3}
   lauchSpawnPoint: {fileID: 4233806550564075276}
 --- !u!1 &4233806550317191336
