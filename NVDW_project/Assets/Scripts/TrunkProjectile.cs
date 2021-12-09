@@ -31,9 +31,10 @@ public class TrunkProjectile : MonoBehaviour
             if (hitinfo.collider.CompareTag("Player"))
             {
                 var player=hitinfo.collider.GetComponent<PlayerController>();
+                player.animator.SetTrigger("hurt");
                 player.Bounce(this.transform.right * 3 );
                 player.health.Decrement();
-                player.animator.SetTrigger("hurt");
+                
             }
             DestructionAnimation();
         }

@@ -173,13 +173,11 @@ namespace Platformer.Mechanics
                             velocity = velocity - projection * currentNormal;
                         }
                     }
-                    else if (currentNormal.normalized.x > 0.7f || currentNormal.normalized.x < -0.7f)
+                    else if (currentNormal.normalized.x > 0.9f || currentNormal.normalized.x < -0.9f)
                     {
                         //We are airborne, but hit a wall add drag if falling.
                         IsDragging = true;
                         JumpedOff = false;
-
- 
                     }
                     //remove shellDistance from actual move distance.
                     var modifiedDistance = hitBuffer[i].distance - shellRadius;

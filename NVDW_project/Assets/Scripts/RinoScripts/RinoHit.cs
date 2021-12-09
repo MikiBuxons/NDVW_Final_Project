@@ -41,10 +41,11 @@ public class RinoHit : MonoBehaviour
             }
             else
             {
-                enemyParent.Bounce(10*(enemyParent.transform.position-player.transform.position).normalized);
-                player.Bounce(-5*(enemyParent.transform.position-player.transform.position).normalized);
-                player.health.Decrement();
                 player.animator.SetTrigger("hurt");
+                enemyParent.Bounce(5*(enemyParent.transform.position-player.transform.position).normalized);
+                player.Bounce(-3*(enemyParent.transform.position-player.transform.position).normalized);
+                player.health.Decrement();
+                
             }
             
         }
