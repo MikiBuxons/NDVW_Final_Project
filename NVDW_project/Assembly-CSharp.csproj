@@ -65,6 +65,7 @@
      <Compile Include="Assets\Scripts\RinoScripts\RinoHit.cs" />
      <Compile Include="Assets\Scripts\Mechanics\GameController.cs" />
      <Compile Include="Assets\Scripts\Gameplay\EnablePlayerInput.cs" />
+     <Compile Include="Assets\Scripts\WaypointFollow.cs" />
      <Compile Include="Assets\Scripts\Mechanics\Health.cs" />
      <Compile Include="Assets\Scripts\Mechanics\EnemyController.cs" />
      <Compile Include="Assets\Scripts\Gameplay\PlayerLanded.cs" />
@@ -77,10 +78,12 @@
      <Compile Include="Assets\Scripts\View\AnimatedTile.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\Mechanics\TokenInstance.cs" />
+     <Compile Include="Assets\Scripts\SawRotate.cs" />
      <Compile Include="Assets\Scripts\RinoScripts\RinoView.cs" />
      <Compile Include="Assets\Scripts\UI\MainUIController.cs" />
      <Compile Include="Assets\Scripts\Mechanics\AnimationController.cs" />
      <Compile Include="Assets\Scripts\Gameplay\PlayerStopJump.cs" />
+     <Compile Include="Assets\Scripts\StartGame.cs" />
      <Compile Include="Assets\Scripts\Core\Simulation.cs" />
      <Compile Include="Assets\Mod Assets\Mod Resources\Scripts\Platformer\Jiggler.cs" />
      <Compile Include="Assets\Scripts\TrunkScripts\TrunkSafeZoneCheck.cs" />
@@ -354,13 +357,13 @@
  <HintPath>/Applications/Unity/Hub/Editor/2020.3.22f1/Unity.app/Contents/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll</HintPath>
  </Reference>
  <Reference Include="System.IO.Compression.FileSystem">
- <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project-main/NVDW_project/Library/PackageCache/com.unity.connect.share@4.1.1/Plugins/System.IO.Compression.FileSystem.dll</HintPath>
+ <HintPath>/Users/cbr4yan/Dev/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.connect.share@4.1.1/Plugins/System.IO.Compression.FileSystem.dll</HintPath>
  </Reference>
  <Reference Include="Pathfinding.Ionic.Zip.Reduced">
- <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project-main/NVDW_project/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+ <HintPath>/Users/cbr4yan/Dev/NDVW_Final_Project/NVDW_project/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
  </Reference>
  <Reference Include="Newtonsoft.Json">
- <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project-main/NVDW_project/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
+ <HintPath>/Users/cbr4yan/Dev/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>/Applications/Unity/Hub/Editor/2020.3.22f1/Unity.app/Contents/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
