@@ -28,7 +28,7 @@ namespace Platformer.Gameplay
             player.velocity=Vector2.zero;
             player.animator.SetTrigger("hurt");
             player.animator.SetBool("dead", true);
-            Simulation.Schedule<PlayerSpawn>();
+            Simulation.Schedule<PlayerSpawn>(2);
 
         }
     }
