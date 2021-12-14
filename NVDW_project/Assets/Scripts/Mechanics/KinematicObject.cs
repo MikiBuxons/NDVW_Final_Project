@@ -42,7 +42,7 @@ namespace Platformer.Mechanics
 
         protected const float minMoveDistance = 0.001f;
         protected const float shellRadius = 0.01f;
-
+        public LayerMask whatIsSolid;
 
         /// <summary>
         /// Bounce the object's vertical velocity.
@@ -107,7 +107,11 @@ namespace Platformer.Mechanics
         {
             //if already falling, fall faster than the jump speed, otherwise use normal gravity.
             if (velocity.y < 0)
+            {
+                if (IsDragging)
+                    velocity.y -= velocity.y * drag;
                 velocity += gravityModifier * Physics2D.gravity * Time.deltaTime;
+            }
             else
                 velocity += Physics2D.gravity * Time.deltaTime;
 
@@ -118,6 +122,17 @@ namespace Platformer.Mechanics
                 velocity.x = 0.97f * velocity.x + 0.03f * targetVelocity.x;
             if (velocity.x * currentNormal.x > 0)
                 IsDragging = false;
+            Debug.DrawRay(transform.position, transform.right * 0.5f, Color.red);
+            Debug.DrawRay(transform.position, transform.right * 0.5f, Color.red);
+            RaycastHit2D hitinfo_upleft = Physics2D.Raycast(transform.position , Vector2.left, 0.5f, whatIsSolid);
+            RaycastHit2D hitinfo_downleft = Physics2D.Raycast(transform.position+Vector3.down*0.1f , Vector2.left, 0.5f, whatIsSolid);
+            RaycastHit2D hitinfo_upright = Physics2D.Raycast(transform.position , Vector2.right, 0.5f, whatIsSolid);
+            RaycastHit2D hitinfo_downright = Physics2D.Raycast(transform.position+Vector3.down*0.1f , Vector2.right, 0.5f, whatIsSolid);
+            if (hitinfo_upleft.collider == null && hitinfo_upright.collider == null && hitinfo_downleft.collider == null && hitinfo_downright.collider == null) 
+            {
+                IsDragging = false;
+            }
+
             IsGrounded = false;
 
 
@@ -169,14 +184,11 @@ namespace Platformer.Mechanics
                             velocity = velocity - projection * currentNormal;
                         }
                     }
-                    else if (currentNormal.normalized.x > 0.7f || currentNormal.normalized.x < -0.7f)
+                    else if (currentNormal.normalized.x > 0.95f || currentNormal.normalized.x < -0.95f)
                     {
                         //We are airborne, but hit a wall add drag if falling.
                         IsDragging = true;
                         JumpedOff = false;
-
-                        if (velocity.y<0)
-                            velocity.y -= velocity.y * drag;
                     }
                     //remove shellDistance from actual move distance.
                     var modifiedDistance = hitBuffer[i].distance - shellRadius;
