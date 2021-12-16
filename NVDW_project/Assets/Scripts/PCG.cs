@@ -39,9 +39,14 @@ public class PCG : MonoBehaviour
 
     public int minTilesEnem = 2;
     public int spawnEnemFactor = 10;
-    public List<Enemy> groundEnemies;
+    public List<SpawnProb> enemies;
+
+    public int minTilesTrap = 5;
+    public int spawnTrapFactor = 10;
+    public List<SpawnProb> traps;
+
     [System.Serializable]
-    public class Enemy
+    public class SpawnProb
     {
         public int prob;
         public GameObject prefab;
@@ -58,9 +63,22 @@ public class PCG : MonoBehaviour
 
         // Build map
         GenTerrain(spawn);
+        AddTraps(spawn);
         AddEnemies(spawn);
         FillTerrain();
 
+        List<List<SpawnProb>> spawnProbs = new List<List<SpawnProb>>();
+        spawnProbs.Add(enemies);
+        spawnProbs.Add(traps);
+        foreach (var spawnlist in spawnProbs)
+        {
+            var prob = 0;
+            foreach (var entity in spawnlist)
+            {
+                entity.prob += prob;
+                prob = entity.prob;
+            }
+        }
 
         // Build level from map content
         for (var x = 0; x < map.GetLength(0); x++)
@@ -74,16 +92,12 @@ public class PCG : MonoBehaviour
                 if (map[x, y] == 3)
                 {
                     //terrain.SetTile(new Vector3Int(x, y, 0), limitTile);
-                    var enemSel = Random.Range(0, 100);
-                    foreach (var enem in Enumerable.Reverse(groundEnemies))
-                    {
-                        if (enemSel < enem.prob)
-                        {
-                            var pos = terrain.CellToWorld(new Vector3Int(x, y + 1, 0));
-                            Instantiate(enem.prefab, pos, Quaternion.identity);
-                        }
-                    }
-
+                    SpawnEntityFrom(enemies, x, y + 1);
+                }
+                if (map[x, y] == 4)
+                {
+                    //terrain.SetTile(new Vector3Int(x, y, 0), limitTile);
+                    SpawnEntityFrom(traps, x, y);
                 }
                 if (x == 0 || x == map.GetLength(0) - 1)
                 {
@@ -125,6 +139,21 @@ public class PCG : MonoBehaviour
         Invoke("Scan", 2.0f);
     }
 
+    void SpawnEntityFrom(List<SpawnProb> entities, int x, int y)
+    {
+
+        var entitySel = Random.Range(0, 100);
+        foreach (var entity in entities)
+        {
+            if (entitySel < entity.prob)
+            {
+                var pos = terrain.CellToWorld(new Vector3Int(x, y, 0));
+                Instantiate(entity.prefab, pos, Quaternion.identity);
+                break;
+            }
+        }
+    }
+
     void FillTerrain()
     {
         for (var x = 0; x < map.GetLength(0); x++)
@@ -144,7 +173,7 @@ public class PCG : MonoBehaviour
         }
     }
 
-    void AddEnemies(Vector3Int spawn)
+    void AddToPlatform(Vector3Int spawn, int minTiles, int spawnFact, int val, int fill = -1)
     {
         var start = spawn.y + 3;
         for (var y = 0; y < map.GetLength(1); y++)
@@ -160,17 +189,62 @@ public class PCG : MonoBehaviour
                 {
                     count = 0;
                 }
-                if (count > minTilesEnem)
+                if (count > minTiles)
                 {
                     var enem = Random.Range(0, 100);
-                    if (enem < count * spawnEnemFactor)
+                    if (enem < count * spawnFact)
                     {
-                        map[x, y + 1] = 3;
-                        count = 0;
+                        if (map[x, y + 1] == 0)
+                        {
+                            map[x, y + 1] = val;
+                            if (fill != -1)
+                            {
+                                for (var i = 1; i < count; i++)
+                                {
+                                    map[x - i, y + 1] = fill;
+                                }
+                            }
+                            count = 0;
+                        }
                     }
                 }
             }
         }
+    }
+
+    void AddTraps(Vector3Int spawn)
+    {
+        AddToPlatform(spawn, minTilesTrap, spawnTrapFactor, 4, 5);
+    }
+
+    void AddEnemies(Vector3Int spawn)
+    {
+        //var start = spawn.y + 3;
+        //for (var y = 0; y < map.GetLength(1); y++)
+        //{
+        //    var count = 0;
+        //    for (var x = start; x < map.GetLength(0); x++)
+        //    {
+        //        if (map[x, y] == 1)
+        //        {
+        //            count++;
+        //        }
+        //        else
+        //        {
+        //            count = 0;
+        //        }
+        //        if (count > minTilesEnem)
+        //        {
+        //            var enem = Random.Range(0, 100);
+        //            if (enem < count * spawnEnemFactor)
+        //            {
+        //                map[x, y + 1] = 3;
+        //                count = 0;
+        //            }
+        //        }
+        //    }
+        //}
+        AddToPlatform(spawn, minTilesEnem, spawnEnemFactor, 3);
     }
 
     void GenTerrain(Vector3Int spawn)
