@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 3061445979025108365}
   - component: {fileID: 3061445979025108364}
   - component: {fileID: 3061445979025108363}
+  - component: {fileID: 2840213114935197122}
   - component: {fileID: 3061445979025108362}
   m_Layer: 0
   m_Name: Saw
@@ -207,6 +208,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+--- !u!114 &2840213114935197122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3061445979025108367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec8d60d8c2b9641298ea42f1cfd15f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &3061445979025108362
 BoxCollider2D:
   m_ObjectHideFlags: 0
