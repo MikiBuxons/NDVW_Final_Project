@@ -1170,14 +1170,25 @@ MonoBehaviour:
   wallJumpProb: 20
   maxWallJumpDist: 5
   maxWallJumpHeight: 10
-  minTilesEnem: 2
+  minTilesEnem: 3
   spawnEnemFactor: 10
-  groundEnemies:
-  - prob: 70
+  enemies:
+  - prob: 50
     prefab: {fileID: 7542552129220136101, guid: 783eec7f55766744192f1b085f582437,
       type: 3}
-  - prob: 30
+  - prob: 20
     prefab: {fileID: 8458147460064593478, guid: bcf671dfa8557034fb40e1cd7dc9fc7a,
+      type: 3}
+  - prob: 30
+    prefab: {fileID: 175810579699115377, guid: 65ae2b2fb87775443a0c5d69fea8fd5a, type: 3}
+  minTilesTrap: 5
+  spawnTrapFactor: 10
+  traps:
+  - prob: 50
+    prefab: {fileID: 3061445978727419209, guid: 650f6c1df72c84bc394ea09409658ece,
+      type: 3}
+  - prob: 50
+    prefab: {fileID: 4233806549995468957, guid: 78e66adbb80d04bf4a5f0e07fdeba5ed,
       type: 3}
 --- !u!4 &1235291076
 Transform:
