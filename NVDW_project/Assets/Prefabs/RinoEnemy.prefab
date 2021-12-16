@@ -347,7 +347,7 @@ MonoBehaviour:
   force: {x: 0, y: 0}
   direction: {x: 0, y: 0}
   walkSpeed: 1
-  hitsToDie: 2
+  hitsToDie: 1
   nextWaypointDistance: 1
   jumpNodeHeightRequirement: 0.8
   jumpModifier: 15

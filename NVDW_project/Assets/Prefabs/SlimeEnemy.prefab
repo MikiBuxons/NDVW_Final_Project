@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 1
-  hitsToDie: 2
+  hitsToDie: 1
   mustPatrol: 0
   mustTurn: 0
   isHit: 0
