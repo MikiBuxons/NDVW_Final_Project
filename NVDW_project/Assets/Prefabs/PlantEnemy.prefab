@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4233806549656990921}
   - component: {fileID: 4233806549656990927}
   - component: {fileID: 4233806549656990920}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemyDamage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4233806549995468956}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PlantEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 4233806550005729499}
   - component: {fileID: 9020877741492915251}
   - component: {fileID: 4233806550005729496}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PlantEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -282,7 +282,7 @@ GameObject:
   - component: {fileID: 4233806550317191341}
   - component: {fileID: 4233806550317191342}
   - component: {fileID: 4233806550317191343}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Particle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -383,7 +383,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4233806550564075276}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

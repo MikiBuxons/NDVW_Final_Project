@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3061445978436622332}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Waypoint 2
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3061445978727419208}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Saw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3061445978990594878}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Waypoint 1
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 3061445979025108363}
   - component: {fileID: 2840213114935197122}
   - component: {fileID: 3061445979025108362}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Saw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
