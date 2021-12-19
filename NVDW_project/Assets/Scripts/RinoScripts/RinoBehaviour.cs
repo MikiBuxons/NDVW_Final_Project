@@ -67,8 +67,7 @@ public class RinoBehaviour : MonoBehaviour
     {
         if (mustPatrol && !isHit)
         {
-            Debug.DrawRay(transform.position, Vector3.right * transform.localScale.x * 0.4f, Color.red);
-            mustTurn = !Physics2D.OverlapCircle(groundCheckPos.position, 0.1f, groundLayer) || Physics2D.Raycast(transform.position, Vector3.right*transform.localScale.x, 0.4f, groundLayer);
+            mustTurn = !Physics2D.OverlapCircle(groundCheckPos.position, 0.1f, groundLayer) || Physics2D.Raycast(transform.position, Vector3.right*transform.localScale.x, 0.7f, groundLayer);
         }
       
         // set the variable to jump

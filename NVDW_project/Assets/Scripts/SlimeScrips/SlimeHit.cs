@@ -39,7 +39,7 @@ public class SlimeHit : MonoBehaviour
                 }
                 player.Bounce(5);
             }
-            else
+            else if (player.vulnerable)
             {
                 player.animator.SetTrigger("hurt");
                 enemyParent.isBouncing = true;

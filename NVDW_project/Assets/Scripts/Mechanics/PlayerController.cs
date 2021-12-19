@@ -40,7 +40,7 @@ namespace Platformer.Mechanics
         public AudioSource audioSource;
         public Health health;
 
-
+        public bool vulnerable=true;
         public bool jump;
         public Vector2 move;
         SpriteRenderer spriteRenderer;
@@ -63,9 +63,16 @@ namespace Platformer.Mechanics
             if (animator.GetCurrentAnimatorStateInfo(0).IsTag("hurt") ||
                 animator.GetCurrentAnimatorStateInfo(0).IsTag("dead") ||
                 animator.GetCurrentAnimatorStateInfo(0).IsTag("spawn"))
+            {
                 controlEnabled = false;
+                vulnerable = false;
+            }
             else
+            {
                 controlEnabled = true;
+                vulnerable = true;
+            }
+
             if (controlEnabled)
             {
                 move.x = Input.GetAxis("Horizontal");
@@ -186,7 +193,6 @@ namespace Platformer.Mechanics
             Jumping,
             InFlight,
             Landed,
-            Dragging
         }
     }
 }

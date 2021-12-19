@@ -67,7 +67,7 @@ public class TrunkBehaviour : MonoBehaviour
     {
         if (mustPatrol && !isHit)
         {
-            mustTurn = !Physics2D.OverlapCircle(groundCheckPos.position, 0.1f, groundLayer) || Physics2D.Raycast(transform.position, Vector3.right * transform.localScale.x, 0.3f, groundLayer);
+            mustTurn = !Physics2D.OverlapCircle(groundCheckPos.position, 0.1f, groundLayer) || Physics2D.Raycast(transform.position, Vector3.right * transform.localScale.x, 0.7f, groundLayer);
         }
 
         if (inRange && playerTooClose && !isHit)
