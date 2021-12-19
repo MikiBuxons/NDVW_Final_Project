@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using Pathfinding;
-using System.Linq;
 
 public class PCG : MonoBehaviour
 {
@@ -15,6 +14,8 @@ public class PCG : MonoBehaviour
 
     public Transform spawnPoint;
     public Transform player;
+
+    public GameObject finish;
 
     public PolygonCollider2D confinement;
     public SpriteRenderer background;
@@ -79,7 +80,11 @@ public class PCG : MonoBehaviour
                 prob = entity.prob;
             }
         }
+        BuildLevel();
+    }
 
+    void BuildLevel()
+    {
         // Build level from map content
         for (var x = 0; x < map.GetLength(0); x++)
         {
@@ -99,6 +104,12 @@ public class PCG : MonoBehaviour
                     //terrain.SetTile(new Vector3Int(x, y, 0), limitTile);
                     SpawnEntityFrom(traps, x, y);
                 }
+                if (map[x, y] == 6)
+                {
+                    Vector3 pos = terrain.CellToWorld(new Vector3Int(x, y, 0));
+                    pos = new Vector3(pos.x, pos.y + 0.8f, 0);
+                    Instantiate(finish, pos, Quaternion.identity);
+                }
                 if (x == 0 || x == map.GetLength(0) - 1)
                 {
                     terrain.SetTile(new Vector3Int(x + ((x == 0) ? -1 : 0), y, 0), limitTile);
@@ -109,8 +120,8 @@ public class PCG : MonoBehaviour
 
         // Limits of the map
         var botLeft = terrain.CellToWorld(new Vector3Int(0, 0, 0));
-        var botRight = terrain.CellToWorld(new Vector3Int(mapSizeX-1, 0, 0));
-        var topRight = terrain.CellToWorld(new Vector3Int(mapSizeX-1, mapSizeY, 0));
+        var botRight = terrain.CellToWorld(new Vector3Int(mapSizeX - 1, 0, 0));
+        var topRight = terrain.CellToWorld(new Vector3Int(mapSizeX - 1, mapSizeY, 0));
         var topLeft = terrain.CellToWorld(new Vector3Int(0, mapSizeY, 0));
 
         Vector2[] confLims = { botLeft, botRight, topRight, topLeft };
@@ -118,11 +129,11 @@ public class PCG : MonoBehaviour
         confinement.pathCount = 1;
         confinement.SetPath(0, confLims);
 
-        background.size = new Vector2(mapSizeX, mapSizeY)/2;
-        background.transform.position += new Vector3(mapSizeX, mapSizeY, 0)/2;
+        background.size = new Vector2(mapSizeX, mapSizeY) / 2;
+        background.transform.position += new Vector3(mapSizeX, mapSizeY, 0) / 2;
 
         deathZone.size = new Vector2(mapSizeX, 10);
-        deathZone.transform.position += new Vector3(mapSizeX/2, -5, 0);
+        deathZone.transform.position += new Vector3(mapSizeX / 2, -5, 0);
 
 
         // Astar grid configuration
@@ -214,36 +225,11 @@ public class PCG : MonoBehaviour
 
     void AddTraps(Vector3Int spawn)
     {
-        AddToPlatform(spawn, minTilesTrap, spawnTrapFactor, 4, 5);
+        AddToPlatform(spawn, minTilesTrap, spawnTrapFactor, 4);
     }
 
     void AddEnemies(Vector3Int spawn)
     {
-        //var start = spawn.y + 3;
-        //for (var y = 0; y < map.GetLength(1); y++)
-        //{
-        //    var count = 0;
-        //    for (var x = start; x < map.GetLength(0); x++)
-        //    {
-        //        if (map[x, y] == 1)
-        //        {
-        //            count++;
-        //        }
-        //        else
-        //        {
-        //            count = 0;
-        //        }
-        //        if (count > minTilesEnem)
-        //        {
-        //            var enem = Random.Range(0, 100);
-        //            if (enem < count * spawnEnemFactor)
-        //            {
-        //                map[x, y + 1] = 3;
-        //                count = 0;
-        //            }
-        //        }
-        //    }
-        //}
         AddToPlatform(spawn, minTilesEnem, spawnEnemFactor, 3);
     }
 
@@ -284,6 +270,8 @@ public class PCG : MonoBehaviour
             }
         }
         current = GenRoom(current, mapSizeX - current.x - 1); // always finish in room to place goal
+        // TODO add finish
+        map[current.x - 1, current.y + 1] = 6;
     }
 
     Vector3Int GenAddDot(Vector3Int current, int dist = 1) // helps fitting

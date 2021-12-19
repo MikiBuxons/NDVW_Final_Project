@@ -1157,6 +1157,7 @@ MonoBehaviour:
   terrain: {fileID: 891015733}
   spawnPoint: {fileID: 761519188}
   player: {fileID: 119797080}
+  finish: {fileID: 6866741136416379703, guid: f4778a74752ae4b95a96d1b61f678e0a, type: 3}
   confinement: {fileID: 712277757}
   background: {fileID: 2092322893}
   deathZone: {fileID: 1746191690}
@@ -1173,22 +1174,21 @@ MonoBehaviour:
   minTilesEnem: 3
   spawnEnemFactor: 10
   enemies:
-  - prob: 50
+  - prob: 40
     prefab: {fileID: 7542552129220136101, guid: 783eec7f55766744192f1b085f582437,
       type: 3}
   - prob: 20
     prefab: {fileID: 8458147460064593478, guid: bcf671dfa8557034fb40e1cd7dc9fc7a,
       type: 3}
-  - prob: 30
+  - prob: 20
+    prefab: {fileID: 175810579699115377, guid: 65ae2b2fb87775443a0c5d69fea8fd5a, type: 3}
+  - prob: 20
     prefab: {fileID: 175810579699115377, guid: 65ae2b2fb87775443a0c5d69fea8fd5a, type: 3}
   minTilesTrap: 5
   spawnTrapFactor: 10
   traps:
-  - prob: 50
+  - prob: 100
     prefab: {fileID: 3061445978727419209, guid: 650f6c1df72c84bc394ea09409658ece,
-      type: 3}
-  - prob: 50
-    prefab: {fileID: 4233806549995468957, guid: 78e66adbb80d04bf4a5f0e07fdeba5ed,
       type: 3}
 --- !u!4 &1235291076
 Transform:
