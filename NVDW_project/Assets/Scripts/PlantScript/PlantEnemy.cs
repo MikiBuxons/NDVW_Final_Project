@@ -20,11 +20,14 @@ public class PlantEnemy : MonoBehaviour
             if (waitedTime <= 0) {
                 waitedTime = waitTimeToAttack;
                 animator.Play("Attack");
-
             } else {
                 waitedTime -= Time.deltaTime;
             }
         }
+    }
+
+    private void FixedUpdate(){
+      
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -41,7 +44,14 @@ public class PlantEnemy : MonoBehaviour
         {
             inRange = false;
         }
+    }   
+    
+     void Flip()
+    {
+        transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+        lauchSpawnPoint.rotation *= Quaternion.Euler(0,180f,0);
     }
+    
 
     public void LaunchBullet() {
         GameObject newBullet;
