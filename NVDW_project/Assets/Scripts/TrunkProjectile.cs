@@ -11,7 +11,7 @@ public class TrunkProjectile : MonoBehaviour
     public float distance;
     public LayerMask whatIsSolid;
     private Animator anim;
-
+    public float damagePenalty=10;
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -31,6 +31,7 @@ public class TrunkProjectile : MonoBehaviour
             if (hitinfo.collider.CompareTag("Player"))
             {
                 var player=hitinfo.collider.GetComponent<PlayerController>();
+                player.reward += damagePenalty;
                 player.animator.SetTrigger("hurt");
                 player.Bounce(this.transform.right * 3 );
                 player.health.Decrement();

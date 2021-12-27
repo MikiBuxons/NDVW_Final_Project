@@ -53,7 +53,7 @@ public class PCG : MonoBehaviour
         public GameObject prefab;
     }
 
-    void Start()
+    public void Start()
     {
         var spawn = new Vector3Int(2, Random.Range(3, mapSizeY - 5), 0);
         spawnPoint.position = terrain.CellToWorld(spawn);
@@ -133,11 +133,18 @@ public class PCG : MonoBehaviour
         //Invoke("BuildLevel", 20.0f);
     }
 
-    void BuildLevel()
+    public void BuildLevel()
     {
         terrain.ClearAllTiles();
         var clones = GameObject.FindGameObjectsWithTag("Enemy");
+        
         foreach (var clone in clones)
+        {
+            Destroy(clone);
+        }
+
+        var finishClones = GameObject.FindGameObjectsWithTag("Finish");
+        foreach (var clone in finishClones)
         {
             Destroy(clone);
         }

@@ -7,6 +7,7 @@ using UnityEngine;
 public class DamageObject : MonoBehaviour
 {
     public float bounceStrength;
+    public float damagePenalty=10;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.transform.CompareTag("Player"))
@@ -15,6 +16,7 @@ public class DamageObject : MonoBehaviour
             if (player.vulnerable)
             {
                 player.animator.SetTrigger("hurt");
+                player.reward -= damagePenalty;
                 player.Bounce(-bounceStrength * (transform.position - player.transform.position).normalized);
                 player.health.Decrement();
             }
