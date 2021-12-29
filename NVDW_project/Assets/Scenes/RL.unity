@@ -1574,39 +1574,13 @@ Transform:
   m_Father: {fileID: 1407341031}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1208144818949857 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1261592862148037104, guid: 7b318bf5728269f43957dc6ed358a188,
-    type: 3}
-  m_PrefabInstance: {fileID: 1262800972523357969}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1208144818949858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1208144818949857}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 282f342c2ab144bf38be65d4d0c4e07d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Camera: {fileID: 251430890}
-  m_SensorName: CameraSensor
-  m_Width: 128
-  m_Height: 64
-  m_Grayscale: 1
-  m_ObservationType: 0
-  m_ObservationStacks: 1
-  m_Compression: 1
 --- !u!114 &1208144818949869 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1261592862148037106, guid: 7b318bf5728269f43957dc6ed358a188,
     type: 3}
   m_PrefabInstance: {fileID: 1262800972523357969}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1208144818949857}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 28e4f465aeacf984eaf804721ec482c4, type: 3}
@@ -1625,6 +1599,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1208144818949858, guid: 7b318bf5728269f43957dc6ed358a188, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 251430890}
     - target: {fileID: 1261592862148037104, guid: 7b318bf5728269f43957dc6ed358a188,
         type: 3}
       propertyPath: m_Name
@@ -1635,36 +1613,6 @@ PrefabInstance:
       propertyPath: pcg
       value: 
       objectReference: {fileID: 1235291075}
-    - target: {fileID: 1261592862148037106, guid: 7b318bf5728269f43957dc6ed358a188,
-        type: 3}
-      propertyPath: MaxStep
-      value: 4000
-      objectReference: {fileID: 0}
-    - target: {fileID: 1261592862148037106, guid: 7b318bf5728269f43957dc6ed358a188,
-        type: 3}
-      propertyPath: jumpTakeOffSpeed
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1261592862148037106, guid: 7b318bf5728269f43957dc6ed358a188,
-        type: 3}
-      propertyPath: rightRecordReward
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1261592862148037107, guid: 7b318bf5728269f43957dc6ed358a188,
-        type: 3}
-      propertyPath: m_BehaviorName
-      value: Visual
-      objectReference: {fileID: 0}
-    - target: {fileID: 1261592862148037107, guid: 7b318bf5728269f43957dc6ed358a188,
-        type: 3}
-      propertyPath: m_BehaviorType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1261592862148037107, guid: 7b318bf5728269f43957dc6ed358a188,
-        type: 3}
-      propertyPath: m_BrainParameters.VectorObservationSize
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1267290015224475670, guid: 7b318bf5728269f43957dc6ed358a188,
         type: 3}
       propertyPath: m_RootOrder
@@ -1735,6 +1683,5 @@ PrefabInstance:
       propertyPath: hearts.Array.data[2]
       value: 
       objectReference: {fileID: 1564284164}
-    m_RemovedComponents:
-    - {fileID: 1208144818949868, guid: 7b318bf5728269f43957dc6ed358a188, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b318bf5728269f43957dc6ed358a188, type: 3}
