@@ -88,6 +88,7 @@ namespace Platformer.Mechanics
         {
             pcg.BuildLevel();
             Schedule<PlayerSpawn>();
+            xRecord = 0;
             foreach (var t in health.hearts)
             {
                 t.gameObject.SetActive(true);

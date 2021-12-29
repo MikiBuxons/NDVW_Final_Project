@@ -28,7 +28,7 @@ namespace Platformer.Gameplay
             player.velocity=Vector2.zero;
             player.reward += -1000f;
             player.animator.SetBool("dead", true);
-            Simulation.Schedule<PlayerSpawn>(1);
+            Simulation.Schedule<PlayerSpawn>(0);
             player.EndEpisode();
         }
     }

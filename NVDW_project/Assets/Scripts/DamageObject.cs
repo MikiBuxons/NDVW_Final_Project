@@ -7,8 +7,9 @@ using UnityEngine;
 public class DamageObject : MonoBehaviour
 {
     public float bounceStrength;
-    public float damagePenalty=10;
-    private void OnCollisionEnter2D(Collision2D collision)
+    public float damagePenalty = 10;
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.transform.CompareTag("Player"))
         {
@@ -20,6 +21,10 @@ public class DamageObject : MonoBehaviour
                 player.Bounce(-bounceStrength * (transform.position - player.transform.position).normalized);
                 player.health.Decrement();
             }
+
+            var Saw = gameObject.GetComponent<WaypointFollow>();
+            if (Saw)
+                Saw.hitPlayer = true;
         }
     }
 }

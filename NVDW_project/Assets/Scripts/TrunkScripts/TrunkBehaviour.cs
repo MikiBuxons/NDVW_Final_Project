@@ -28,7 +28,7 @@ public class TrunkBehaviour : MonoBehaviour
     [HideInInspector] public bool playerTooClose = false;
     [HideInInspector] public bool isHit = false;
     [HideInInspector] public bool inRange = false;
-    [HideInInspector] public Transform target;
+    [HideInInspector] public GameObject target;
     [HideInInspector] public Animator anim;
     public bool isBouncing = false;
     private bool mustTurn;
@@ -102,7 +102,7 @@ public class TrunkBehaviour : MonoBehaviour
         float attackSpeed = walkSpeed / 2f;
 
         //Direction calculation
-        Vector2 direction = ((Vector2) target.position - rb.position).normalized;
+        Vector2 direction = ((Vector2) target.transform.position - rb.position).normalized;
         Vector2 force = direction * attackSpeed;
         
         //Movement 

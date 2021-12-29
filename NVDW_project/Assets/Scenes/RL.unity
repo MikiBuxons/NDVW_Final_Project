@@ -1037,16 +1037,17 @@ MonoBehaviour:
   minTilesEnem: 3
   spawnEnemFactor: 10
   enemies:
-  - prob: 40
+  - prob: 0
     prefab: {fileID: 7542552129220136101, guid: 783eec7f55766744192f1b085f582437,
       type: 3}
-  - prob: 20
+  - prob: 0
     prefab: {fileID: 8458147460064593478, guid: bcf671dfa8557034fb40e1cd7dc9fc7a,
       type: 3}
-  - prob: 20
+  - prob: 0
     prefab: {fileID: 175810579699115377, guid: 65ae2b2fb87775443a0c5d69fea8fd5a, type: 3}
-  - prob: 20
-    prefab: {fileID: 175810579699115377, guid: 65ae2b2fb87775443a0c5d69fea8fd5a, type: 3}
+  - prob: 80
+    prefab: {fileID: 4233806549995468957, guid: 78e66adbb80d04bf4a5f0e07fdeba5ed,
+      type: 3}
   minTilesTrap: 5
   spawnTrapFactor: 10
   traps:
@@ -1593,11 +1594,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Camera: {fileID: 251430890}
   m_SensorName: CameraSensor
-  m_Width: 84
-  m_Height: 84
+  m_Width: 128
+  m_Height: 64
   m_Grayscale: 1
   m_ObservationType: 0
-  m_ObservationStacks: 4
+  m_ObservationStacks: 1
   m_Compression: 1
 --- !u!114 &1208144818949869 stripped
 MonoBehaviour:
@@ -1637,12 +1638,17 @@ PrefabInstance:
     - target: {fileID: 1261592862148037106, guid: 7b318bf5728269f43957dc6ed358a188,
         type: 3}
       propertyPath: MaxStep
-      value: 400000
+      value: 4000
       objectReference: {fileID: 0}
     - target: {fileID: 1261592862148037106, guid: 7b318bf5728269f43957dc6ed358a188,
         type: 3}
       propertyPath: jumpTakeOffSpeed
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1261592862148037106, guid: 7b318bf5728269f43957dc6ed358a188,
+        type: 3}
+      propertyPath: rightRecordReward
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1261592862148037107, guid: 7b318bf5728269f43957dc6ed358a188,
         type: 3}
