@@ -195,6 +195,7 @@ MonoBehaviour:
   waypoints:
   - {fileID: 3061445978990594879}
   - {fileID: 3061445978436622333}
+  hitPlayer: 0
   speed: 1
 --- !u!114 &3061445979025108363
 MonoBehaviour:
@@ -222,6 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounceStrength: 5
+  damagePenalty: 10
 --- !u!61 &3061445979025108362
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -258,7 +260,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

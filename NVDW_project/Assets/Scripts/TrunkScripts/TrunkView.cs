@@ -20,7 +20,7 @@ public class TrunkView : MonoBehaviour
         {
             enemyParent.mustPatrol = false;
             enemyParent.inRange = true;
-            enemyParent.target = collider.transform;
+            enemyParent.target = collider.gameObject;
             anim.SetBool("playerLocated", true);
         }
     }
