@@ -19,7 +19,8 @@ GameObject:
   - component: {fileID: 1262800971690369100}
   - component: {fileID: 1261592862148037107}
   - component: {fileID: 1587769673}
-  - component: {fileID: 1208144818949868}
+  - component: {fileID: 1208144818949858}
+  - component: {fileID: 1208144818949859}
   m_Layer: 6
   m_Name: PlayerAgent
   m_TagString: Player
@@ -56,7 +57,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 1000
+  MaxStep: 4000
   minGroundNormalY: 0.9
   gravityModifier: 2
   drag: 0.15
@@ -73,7 +74,7 @@ MonoBehaviour:
   ouchAudio: {fileID: 0}
   pcg: {fileID: 0}
   maxSpeed: 5
-  jumpTakeOffSpeed: 7
+  jumpTakeOffSpeed: 8
   jumpState: 0
   collider2d: {fileID: 0}
   audioSource: {fileID: 0}
@@ -81,6 +82,9 @@ MonoBehaviour:
   vulnerable: 1
   jump: 0
   move: {x: 0, y: 0}
+  reward: 0
+  timePenalty: 1
+  rightRecordReward: 10
 --- !u!212 &1402653481113171512
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -339,7 +343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 1
+    VectorObservationSize: 0
     NumStackedVectorObservations: 1
     m_ActionSpec:
       m_NumContinuousActions: 1
@@ -350,8 +354,8 @@ MonoBehaviour:
     hasUpgradedBrainParametersWithActionSpec: 1
   m_Model: {fileID: 0}
   m_InferenceDevice: 0
-  m_BehaviorType: 1
-  m_BehaviorName: My Behavior
+  m_BehaviorType: 0
+  m_BehaviorName: Visual
   TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
@@ -370,7 +374,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DecisionPeriod: 5
   TakeActionsBetweenDecisions: 1
---- !u!114 &1208144818949868
+--- !u!114 &1208144818949858
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -379,8 +383,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 1261592862148037104}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a5c9d521e5ef4759a8246a07d52221e, type: 3}
+  m_Script: {fileID: 11500000, guid: 282f342c2ab144bf38be65d4d0c4e07d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DecisionPeriod: 5
-  TakeActionsBetweenDecisions: 1
+  m_Camera: {fileID: 0}
+  m_SensorName: CameraSensor
+  m_Width: 128
+  m_Height: 64
+  m_Grayscale: 1
+  m_ObservationType: 0
+  m_ObservationStacks: 1
+  m_Compression: 1
+--- !u!114 &1208144818949859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1261592862148037104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2902496c0120472b90269f94a0aec7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Record: 1
+  NumStepsToRecord: 0
+  DemonstrationName: 
+  DemonstrationDirectory: 
