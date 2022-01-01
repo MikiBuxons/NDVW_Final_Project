@@ -55,12 +55,6 @@ public class PCG : MonoBehaviour
 
     public void Start()
     {
-        var spawn = new Vector3Int(2, Random.Range(3, mapSizeY - 5), 0);
-        spawnPoint.position = terrain.CellToWorld(spawn);
-        spawnPoint.position = new Vector3(spawnPoint.position.x, spawnPoint.position.y + 3, 0);
-
-        map = new float[mapSizeX, mapSizeY];
-
         List<List<SpawnProb>> spawnProbs = new List<List<SpawnProb>>();
         spawnProbs.Add(enemies);
         spawnProbs.Add(traps);
@@ -74,30 +68,7 @@ public class PCG : MonoBehaviour
             }
         }
 
-        // Build map
-        GenTerrain(spawn);
-        AddTraps(spawn);
-        AddEnemies(spawn);
-        FillTerrain();
-
-        BuildLevel();
-
-        //for (var x = 0; x < map.GetLength(0); x++)
-        //{
-        //    for (var y = 0; y < map.GetLength(1); y++)
-        //    {
-        //        if (map[x, y] == 4)
-        //        {
-        //            SpawnEntityFrom(traps, x, y);
-        //        }
-        //        if (map[x, y] == 6)
-        //        {
-        //            Vector3 pos = terrain.CellToWorld(new Vector3Int(x, y, 0));
-        //            pos = new Vector3(pos.x, pos.y + 0.8f, 0);
-        //            Instantiate(finish, pos, Quaternion.identity);
-        //        }
-        //    }
-        //}
+        Init();
 
         // Limits of the map
         var botLeft = terrain.CellToWorld(new Vector3Int(0, 0, 0));
@@ -116,6 +87,25 @@ public class PCG : MonoBehaviour
         deathZone.size = new Vector2(mapSizeX, 10);
         deathZone.transform.position += new Vector3(mapSizeX / 2, -5, 0);
 
+        //Invoke("BuildLevel", 20.0f);
+        //Invoke("Init", 40.0f);
+    }
+
+    public void Init()
+    {
+        var spawn = new Vector3Int(2, Random.Range(3, mapSizeY - 5), 0);
+        spawnPoint.position = terrain.CellToWorld(spawn);
+        spawnPoint.position = new Vector3(spawnPoint.position.x, spawnPoint.position.y + 3, 0);
+
+        map = new float[mapSizeX, mapSizeY];
+
+        // Build map
+        GenTerrain(spawn);
+        AddTraps(spawn);
+        AddEnemies(spawn);
+        FillTerrain();
+
+        BuildLevel();
 
         // Astar grid configuration
         foreach (GridGraph graph in AstarPath.active.data.GetUpdateableGraphs())
@@ -137,7 +127,6 @@ public class PCG : MonoBehaviour
     {
         terrain.ClearAllTiles();
         var clones = GameObject.FindGameObjectsWithTag("Enemy");
-        
         foreach (var clone in clones)
         {
             Destroy(clone);
