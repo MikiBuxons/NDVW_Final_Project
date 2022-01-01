@@ -59,6 +59,7 @@ namespace Platformer.Mechanics
         public float timePenalty=1f;
         public float rightRecordReward=2f;
         private float xRecord = 0;
+        public float wallJumpReward;
         public void Update()
         {
             //Workaround mlagents only working with FixedUpdate
@@ -109,8 +110,6 @@ namespace Platformer.Mechanics
 
         public override void OnActionReceived(ActionBuffers actionBuffers)
         {
-            float final_reward=reward;
-            
             var jumpKeyDown = actionBuffers.DiscreteActions[0];
             var jumpKeyUp = actionBuffers.DiscreteActions[1];
             if (animator.GetCurrentAnimatorStateInfo(0).IsTag("hurt") ||
@@ -151,17 +150,13 @@ namespace Platformer.Mechanics
             //Reward new record in the horizontal axis
             if (transform.position.x > xRecord)
             {
-                final_reward+=rightRecordReward;
+                AddReward(rightRecordReward);
                 xRecord = transform.position.x;
             }
                 
             
             //Penalize for each frame (favor faster agents)
-            final_reward -= timePenalty;
-            if (final_reward!=-1f)
-                Debug.Log(final_reward);
-            reward = 0f;
-            SetReward(final_reward);
+            AddReward(-timePenalty);
         }
 
         void UpdateJumpState()
@@ -227,7 +222,7 @@ namespace Platformer.Mechanics
                 IsDragging = false;
                 velocity.y = jumpTakeOffSpeed * model.jumpModifier;
                 velocity.x = currentNormal.x * jumpTakeOffSpeed * model.jumpModifier;
-
+                AddReward(wallJumpReward);
                 jump = false;
             }
             else if (stopJump)

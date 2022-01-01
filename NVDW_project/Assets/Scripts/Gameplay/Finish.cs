@@ -8,7 +8,7 @@ using static Platformer.Core.Simulation;
 
 public class Finish : MonoBehaviour
 {
-    public float victoryReward=10000;
+    public float victoryReward=1f;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +19,7 @@ public class Finish : MonoBehaviour
         if (collision.gameObject.CompareTag("Player")) {
             // CompleteLevel();
             var player = collision.gameObject.GetComponent<PlayerController>();
-            player.reward += victoryReward;
+            player.AddReward(victoryReward);
             player.EndEpisode();
             // Schedule<PlayerDeath>();
         }

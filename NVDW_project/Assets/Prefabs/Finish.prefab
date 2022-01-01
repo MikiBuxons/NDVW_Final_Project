@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5fe7bdd26a8e48338161d48865586ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  victoryReward: 10000
+  victoryReward: 1
 --- !u!95 &6866741136416379690
 Animator:
   serializedVersion: 3
