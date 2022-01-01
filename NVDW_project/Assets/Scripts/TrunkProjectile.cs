@@ -11,7 +11,8 @@ public class TrunkProjectile : MonoBehaviour
     public float distance;
     public LayerMask whatIsSolid;
     private Animator anim;
-    public float damagePenalty=10;
+    public float damagePenalty = 1;
+
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -25,18 +26,21 @@ public class TrunkProjectile : MonoBehaviour
         //Debug.DrawRay(transform.position, transform.right * distance, Color.red);
         RaycastHit2D hitinfo = Physics2D.Raycast(transform.position, transform.right, distance, whatIsSolid);
         //&& !hitinfo.collider.CompareTag("Untagged")
-        if (hitinfo.collider != null )
+        if (hitinfo.collider != null)
         {
             Debug.Log(hitinfo.collider.tag);
             if (hitinfo.collider.CompareTag("Player"))
             {
-                var player=hitinfo.collider.GetComponent<PlayerController>();
-                player.reward += damagePenalty;
-                player.animator.SetTrigger("hurt");
-                player.Bounce(this.transform.right * 3 );
-                player.health.Decrement();
-                
+                var player = hitinfo.collider.GetComponent<PlayerController>();
+                if (player.vulnerable)
+                {
+                    player.AddReward(-damagePenalty);
+                    player.animator.SetTrigger("hurt");
+                    player.Bounce(this.transform.right * 3);
+                    player.health.Decrement();
+                }
             }
+
             DestructionAnimation();
         }
         else
@@ -49,7 +53,7 @@ public class TrunkProjectile : MonoBehaviour
     {
         anim.SetBool("isDestructed", true);
     }
-    
+
     public void TriggerDestroy()
     {
         Destroy(this.gameObject);

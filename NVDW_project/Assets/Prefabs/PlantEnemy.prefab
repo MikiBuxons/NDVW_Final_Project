@@ -73,7 +73,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounceStrength: 3
-  damagePenalty: 10
+  damagePenalty: 0.0005
 --- !u!61 &7612119750121467951
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -253,7 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37d69ed9ac9ba4c6fb8a7d1d69cc550c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTimeToAttack: 3
+  waitTimeToAttack: 2
   animator: {fileID: 4233806550005729498}
   bulletPrefab: {fileID: 8107997568998444407, guid: 7889bf5b4ded58449931f90ce15f0d04,
     type: 3}
@@ -339,6 +339,7 @@ MonoBehaviour:
   destroyParticles: {fileID: 4233806550317191336}
   jumpForce: 3
   lifes: 1
+  enemyReward: 0.001
 --- !u!1 &4233806550317191336
 GameObject:
   m_ObjectHideFlags: 0

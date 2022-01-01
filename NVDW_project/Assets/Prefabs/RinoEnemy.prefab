@@ -498,6 +498,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collider2d: {fileID: 8458147460961054028}
+  enemyReward: 0.001
+  damagePenalty: 0.0005
 --- !u!70 &8458147460961054028
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

@@ -83,8 +83,8 @@ MonoBehaviour:
   jump: 0
   move: {x: 0, y: 0}
   reward: 0
-  timePenalty: 1
-  rightRecordReward: 10
+  timePenalty: 0.0001
+  rightRecordReward: 0.001
 --- !u!212 &1402653481113171512
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -329,7 +329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8534e17a0f90604c9afd4f5c73d829f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Id: 2cedde77-9eec-414f-a172-5c4b3c8e2891
+  m_Id: c7b4bfd3-d458-4aa1-999b-c0b327565d6a
 --- !u!114 &1261592862148037107
 MonoBehaviour:
   m_ObjectHideFlags: 0
