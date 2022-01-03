@@ -14,6 +14,7 @@ public class PCG : MonoBehaviour
 
     public Transform spawnPoint;
     public Transform player;
+    public Transform playerRL;
 
     public GameObject finish;
 
@@ -96,7 +97,7 @@ public class PCG : MonoBehaviour
         var spawn = new Vector3Int(2, Random.Range(3, mapSizeY - 5), 0);
         spawnPoint.position = terrain.CellToWorld(spawn);
         spawnPoint.position = new Vector3(spawnPoint.position.x, spawnPoint.position.y + 3, 0);
-
+        
         map = new float[mapSizeX, mapSizeY];
 
         // Build map
@@ -115,8 +116,12 @@ public class PCG : MonoBehaviour
             graph.SetDimensions((int)w, (int)h, 0.2f);
             graph.center = new Vector3(mapSizeX / 2, (mapSizeY / 2) + 0, 0);
         }
-
+        
         player.position = spawnPoint.position;
+        if (playerRL != null)
+        {
+            playerRL.position = spawnPoint.position;
+        }
 
         Invoke("Scan", 2.0f);
 
