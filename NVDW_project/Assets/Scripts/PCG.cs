@@ -308,18 +308,18 @@ public class PCG : MonoBehaviour
             switch (room)
             {
                 case int n when (n <= roomProb):
-                    if (prev == "room") break;
+                    if (roomProb != 100 && prev == "room") break;
                     current = GenRoom(current);
                     prev = "room";
                     break;
 
                 case int n when (n <= roomProb + jumpProb):
-                    if (prev == "jump") break;
+                    if (jumpProb != 100 && prev == "jump") break;
                     current = GenJump(current);
                     prev = "jump";
                     break;
                 case int n when (n <= roomProb + jumpProb + wallJumpProb):
-                    if (prev == "wallJump") break;
+                    if (wallJumpProb != 100 && prev == "wallJump") break;
                     current = GenWallJump(current);
                     prev = "wallJump";
                     break;
