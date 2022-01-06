@@ -296,6 +296,9 @@
  <Reference Include="UnityEditor.LinuxStandalone.Extensions">
  <HintPath>/home/mike/Unity/Hub/Editor/2020.3.22f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll</HintPath>
  </Reference>
+ <Reference Include="System.IO.Abstractions">
+ <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.ml-agents@2.1.0-exp.1/Plugins/System.IO.Abstractions.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.Plastic.Newtonsoft.Json">
  <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.collab-proxy@1.13.5/Lib/Editor/PlasticSCM/Unity.Plastic.Newtonsoft.Json.dll</HintPath>
  </Reference>
@@ -308,11 +311,26 @@
  <Reference Include="System.IO.Compression.FileSystem">
  <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.connect.share@4.1.1/Plugins/System.IO.Compression.FileSystem.dll</HintPath>
  </Reference>
+ <Reference Include="Google.Protobuf">
+ <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.barracuda@2.0.0-pre.3/Barracuda/Runtime/Plugins/ProtoBuffer/Google.Protobuf.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Burst.Unsafe">
+ <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.burst@1.3.4/Unity.Burst.Unsafe.dll</HintPath>
+ </Reference>
  <Reference Include="Pathfinding.Ionic.Zip.Reduced">
  <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
  </Reference>
  <Reference Include="log4netPlastic">
  <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.collab-proxy@1.13.5/Lib/Editor/PlasticSCM/log4netPlastic.dll</HintPath>
+ </Reference>
+ <Reference Include="System.IO.Abstractions.TestingHelpers">
+ <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.ml-agents@2.1.0-exp.1/Plugins/System.IO.Abstractions.TestingHelpers.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Interactive.Async">
+ <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.ml-agents@2.1.0-exp.1/Plugins/ProtoBuffer/System.Interactive.Async.dll</HintPath>
+ </Reference>
+ <Reference Include="Grpc.Core">
+ <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.ml-agents@2.1.0-exp.1/Plugins/ProtoBuffer/Grpc.Core.dll</HintPath>
  </Reference>
  <Reference Include="Newtonsoft.Json">
  <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
@@ -674,71 +692,35 @@
  <Reference Include="netstandard">
  <HintPath>/home/mike/Unity/Hub/Editor/2020.3.22f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/netstandard.dll</HintPath>
  </Reference>
- <Reference Include="UnityEngine.TestRunner">
- <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
- </Reference>
  <Reference Include="UnityEditor.TestRunner">
  <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
  </Reference>
- <Reference Include="Unity.2D.Tilemap.Extras">
- <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.2D.Tilemap.Extras.dll</HintPath>
+ <Reference Include="UnityEngine.TestRunner">
+ <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.ML-Agents">
+ <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.ML-Agents.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Barracuda.iOSBLAS">
+ <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.Barracuda.iOSBLAS.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VSCode.Editor">
  <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
- <Reference Include="Unity.2D.Tilemap.Editor">
- <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
- </Reference>
- <Reference Include="UnityEditor.InteractiveTutorialsFramework">
- <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/UnityEditor.InteractiveTutorialsFramework.dll</HintPath>
- </Reference>
- <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.VisualStudio.Editor">
- <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Sysroot.Linux_x86_64">
- <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.Sysroot.Linux_x86_64.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Timeline">
- <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
- </Reference>
- <Reference Include="Unity.TextMeshPro">
- <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Sprite.Editor">
- <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Toolchain.Linux-x86_64">
- <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.Toolchain.Linux-x86_64.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Postprocessing.Editor">
- <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
- </Reference>
  <Reference Include="UnityEditor.UI">
  <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
- </Reference>
- <Reference Include="Unity.PlasticSCM.Editor">
- <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Rider.Editor">
  <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
- <Reference Include="Unity.Play.Publisher.Editor">
- <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.Play.Publisher.Editor.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
- <Reference Include="Unity.2D.Tilemap.Extras.Editor">
- <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.2D.Tilemap.Extras.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.InteractiveTutorials.Core">
- <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.InteractiveTutorials.Core.dll</HintPath>
- </Reference>
  <Reference Include="Unity.EditorCoroutines.Editor">
  <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.EditorCoroutines.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.ML-Agents.CommunicatorObjects">
+ <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.ML-Agents.CommunicatorObjects.dll</HintPath>
  </Reference>
  <Reference Include="Unity.InternalAPIEditorBridgeDev.001">
  <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.InternalAPIEditorBridgeDev.001.dll</HintPath>
@@ -749,17 +731,89 @@
  <Reference Include="com.unity.cinemachine.editor">
  <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.Toolchain.Win-x86_64-Linux-x86_64">
+ <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.Toolchain.Win-x86_64-Linux-x86_64.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Mathematics.Editor">
+ <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Barracuda.MacBLAS">
+ <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.Barracuda.MacBLAS.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.InteractiveTutorials.Core.Scripts">
+ <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.InteractiveTutorials.Core.Scripts.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Barracuda.ONNX">
+ <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.Barracuda.ONNX.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.Tilemap.Extras">
+ <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.2D.Tilemap.Extras.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Barracuda.BurstBLAS">
+ <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.Barracuda.BurstBLAS.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.Tilemap.Editor">
+ <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.InteractiveTutorialsFramework">
+ <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/UnityEditor.InteractiveTutorialsFramework.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.VisualStudio.Editor">
+ <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Barracuda">
+ <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.Barracuda.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Sysroot.Linux_x86_64">
+ <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.Sysroot.Linux_x86_64.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Timeline">
+ <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Burst.Editor">
+ <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.Sprite.Editor">
+ <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Toolchain.Linux-x86_64">
+ <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.Toolchain.Linux-x86_64.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Postprocessing.Editor">
+ <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.PlasticSCM.Editor">
+ <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.Tilemap.Extras.Editor">
+ <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.2D.Tilemap.Extras.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Play.Publisher.Editor">
+ <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.Play.Publisher.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.InteractiveTutorials.Core">
+ <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.InteractiveTutorials.Core.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Mathematics">
+ <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Burst">
+ <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.Burst.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.Postprocessing.Runtime">
  <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.Barracuda.Editor">
+ <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.Barracuda.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.ML-Agents.Editor">
+ <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.ML-Agents.Editor.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.SysrootPackage.Editor">
  <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.SysrootPackage.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.InteractiveTutorials.Core.Scripts">
- <HintPath>/home/mike/Desktop/NDVW_Final_Project/NVDW_project/Library/ScriptAssemblies/Unity.InteractiveTutorials.Core.Scripts.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -767,17 +821,21 @@
       <Project>{06bfdb05-2ff2-f5f8-f158-734bb9617aa8}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.ML-Agents.Extensions.Editor.Input.csproj">
+      <Project>{5e37703f-ec5f-fef9-8439-5b4580cf656d}</Project>
+      <Name>Unity.ML-Agents.Extensions.Editor.Input</Name>
+    </ProjectReference>
     <ProjectReference Include="PackageToolsEditor.csproj">
       <Project>{5d7e5fd4-7aba-ec96-7216-7ee7476c5ea8}</Project>
       <Name>PackageToolsEditor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.2DPlatformer.Tutorials.csproj">
-      <Project>{39151028-47e9-1d58-8dda-09a8df55e3fc}</Project>
-      <Name>Unity.2DPlatformer.Tutorials</Name>
+    <ProjectReference Include="Unity.ML-Agents.Extensions.csproj">
+      <Project>{a516eb40-01f0-2d54-c796-4aee24af7ba4}</Project>
+      <Name>Unity.ML-Agents.Extensions</Name>
     </ProjectReference>
-    <ProjectReference Include="AstarPathfindingProject.csproj">
-      <Project>{2a6d4f8d-5429-2f4a-55e8-6251b80d35b9}</Project>
-      <Name>AstarPathfindingProject</Name>
+    <ProjectReference Include="Unity.ML-Agents.Extensions.Editor.csproj">
+      <Project>{a608688f-c281-7e09-baf7-27475739f2ae}</Project>
+      <Name>Unity.ML-Agents.Extensions.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="AstarPathfindingProjectEditor.csproj">
       <Project>{e00c61a2-37b5-57eb-4a40-5e4424582686}</Project>
@@ -786,6 +844,18 @@
     <ProjectReference Include="Unity.Platformer.Tutorials.csproj">
       <Project>{6ead2a47-01f2-d6a9-ee1f-8ef2c90c05ec}</Project>
       <Name>Unity.Platformer.Tutorials</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.ML-Agents.Extensions.Input.csproj">
+      <Project>{2f37f870-af2f-a4d6-b0de-01fbd953a4bf}</Project>
+      <Name>Unity.ML-Agents.Extensions.Input</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2DPlatformer.Tutorials.csproj">
+      <Project>{39151028-47e9-1d58-8dda-09a8df55e3fc}</Project>
+      <Name>Unity.2DPlatformer.Tutorials</Name>
+    </ProjectReference>
+    <ProjectReference Include="AstarPathfindingProject.csproj">
+      <Project>{2a6d4f8d-5429-2f4a-55e8-6251b80d35b9}</Project>
+      <Name>AstarPathfindingProject</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -53,8 +53,8 @@
      <Compile Include="Packages\com.unity.collab-proxy\Editor\Collaborate\Components\Menus\FloatingMenuItem.cs" />
      <Compile Include="Packages\com.unity.collab-proxy\Editor\Collaborate\Views\Adapters\IAdapter.cs" />
      <Compile Include="Packages\com.unity.collab-proxy\Editor\Collaborate\EditorGameService\SettingsProviderVisuals\LearnMoreVisualHelper.cs" />
-     <Compile Include="Packages\com.unity.collab-proxy\Editor\Collaborate\Components\IconButton.cs" />
      <Compile Include="Packages\com.unity.collab-proxy\Editor\Collaborate\Components\SearchBar.cs" />
+     <Compile Include="Packages\com.unity.collab-proxy\Editor\Collaborate\Components\IconButton.cs" />
      <Compile Include="Packages\com.unity.collab-proxy\Editor\Collaborate\EditorGameService\SettingsProviderVisuals\EnabledVisuals.cs" />
      <Compile Include="Packages\com.unity.collab-proxy\Editor\Collaborate\Utilities\Threading.cs" />
      <Compile Include="Packages\com.unity.collab-proxy\Editor\Collaborate\Views\MainPageView.cs" />
@@ -101,8 +101,8 @@
      <Compile Include="Packages\com.unity.collab-proxy\Editor\Collaborate\Views\Adapters\ListAdapters\ToggleableChangeListAdapter.cs" />
      <Compile Include="Packages\com.unity.collab-proxy\Editor\Collaborate\Common\StringArrayContainer.cs" />
      <Compile Include="Packages\com.unity.collab-proxy\Editor\Collaborate\UserInterface\CollaborateWindow.cs" />
-     <Compile Include="Packages\com.unity.collab-proxy\Editor\Collaborate\EditorGameService\CloudCollabServiceIdentifier.cs" />
      <Compile Include="Packages\com.unity.collab-proxy\Editor\Collaborate\Presenters\HistoryPresenter.cs" />
+     <Compile Include="Packages\com.unity.collab-proxy\Editor\Collaborate\EditorGameService\CloudCollabServiceIdentifier.cs" />
      <Compile Include="Packages\com.unity.collab-proxy\Editor\Collaborate\Models\Providers\Collab.cs" />
      <Compile Include="Packages\com.unity.collab-proxy\Editor\Collaborate\Components\TabPageComponent.cs" />
      <Compile Include="Packages\com.unity.collab-proxy\Editor\Collaborate\Common\SerializableDictionary.cs" />
@@ -117,8 +117,8 @@
      <Compile Include="Packages\com.unity.collab-proxy\Editor\Collaborate\Models\ChangesModel.cs" />
      <Compile Include="Packages\com.unity.collab-proxy\Editor\Collaborate\UserInterface\WindowCache.cs" />
      <Compile Include="Packages\com.unity.collab-proxy\Editor\Collaborate\Models\StartModel.cs" />
-     <Compile Include="Packages\com.unity.collab-proxy\Editor\Collaborate\Settings\CollabSettingsProvider.cs" />
      <Compile Include="Packages\com.unity.collab-proxy\Editor\Collaborate\Presenters\IMainPresenter.cs" />
+     <Compile Include="Packages\com.unity.collab-proxy\Editor\Collaborate\Settings\CollabSettingsProvider.cs" />
      <Compile Include="Packages\com.unity.collab-proxy\Editor\Collaborate\EditorGameService\SettingsProviderVisuals\DisabledVisuals.cs" />
      <Compile Include="Packages\com.unity.collab-proxy\Editor\Collaborate\Presenters\ChangesPresenter.cs" />
      <Compile Include="Packages\com.unity.collab-proxy\Editor\Collaborate\Components\TabView.cs" />
@@ -419,29 +419,47 @@
  <Reference Include="UnityEditor.OSXStandalone.Extensions">
  <HintPath>/Applications/Unity/Hub/Editor/2020.3.22f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
  </Reference>
+ <Reference Include="System.IO.Abstractions">
+ <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.ml-agents@2.1.0-exp.1/Plugins/System.IO.Abstractions.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.Plastic.Newtonsoft.Json">
- <HintPath>/Users/cbr4yan/Dev/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.collab-proxy@1.13.5/Lib/Editor/PlasticSCM/Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+ <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.collab-proxy@1.13.5/Lib/Editor/PlasticSCM/Unity.Plastic.Newtonsoft.Json.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Plastic.Antlr3.Runtime">
- <HintPath>/Users/cbr4yan/Dev/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.collab-proxy@1.13.5/Lib/Editor/PlasticSCM/Unity.Plastic.Antlr3.Runtime.dll</HintPath>
+ <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.collab-proxy@1.13.5/Lib/Editor/PlasticSCM/Unity.Plastic.Antlr3.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="unityplastic">
- <HintPath>/Users/cbr4yan/Dev/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.collab-proxy@1.13.5/Lib/Editor/PlasticSCM/unityplastic.dll</HintPath>
+ <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.collab-proxy@1.13.5/Lib/Editor/PlasticSCM/unityplastic.dll</HintPath>
  </Reference>
  <Reference Include="System.IO.Compression.FileSystem">
- <HintPath>/Users/cbr4yan/Dev/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.connect.share@4.1.1/Plugins/System.IO.Compression.FileSystem.dll</HintPath>
+ <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.connect.share@4.1.1/Plugins/System.IO.Compression.FileSystem.dll</HintPath>
+ </Reference>
+ <Reference Include="Google.Protobuf">
+ <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.barracuda@2.0.0-pre.3/Barracuda/Runtime/Plugins/ProtoBuffer/Google.Protobuf.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Burst.Unsafe">
+ <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.burst@1.3.4/Unity.Burst.Unsafe.dll</HintPath>
  </Reference>
  <Reference Include="Pathfinding.Ionic.Zip.Reduced">
- <HintPath>/Users/cbr4yan/Dev/NDVW_Final_Project/NVDW_project/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+ <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project/NVDW_project/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
  </Reference>
  <Reference Include="log4netPlastic">
- <HintPath>/Users/cbr4yan/Dev/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.collab-proxy@1.13.5/Lib/Editor/PlasticSCM/log4netPlastic.dll</HintPath>
+ <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.collab-proxy@1.13.5/Lib/Editor/PlasticSCM/log4netPlastic.dll</HintPath>
+ </Reference>
+ <Reference Include="System.IO.Abstractions.TestingHelpers">
+ <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.ml-agents@2.1.0-exp.1/Plugins/System.IO.Abstractions.TestingHelpers.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Interactive.Async">
+ <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.ml-agents@2.1.0-exp.1/Plugins/ProtoBuffer/System.Interactive.Async.dll</HintPath>
+ </Reference>
+ <Reference Include="Grpc.Core">
+ <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.ml-agents@2.1.0-exp.1/Plugins/ProtoBuffer/Grpc.Core.dll</HintPath>
  </Reference>
  <Reference Include="Newtonsoft.Json">
- <HintPath>/Users/cbr4yan/Dev/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
+ <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
- <HintPath>/Users/cbr4yan/Dev/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
+ <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>/Applications/Unity/Hub/Editor/2020.3.22f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>

@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using Pathfinding;
-using System.Linq;
 
 public class PCG : MonoBehaviour
 {
@@ -15,6 +14,9 @@ public class PCG : MonoBehaviour
 
     public Transform spawnPoint;
     public Transform player;
+    public Transform playerRL;
+
+    public GameObject finish;
 
     public PolygonCollider2D confinement;
     public SpriteRenderer background;
@@ -39,64 +41,40 @@ public class PCG : MonoBehaviour
 
     public int minTilesEnem = 2;
     public int spawnEnemFactor = 10;
-    public List<Enemy> groundEnemies;
+    public List<SpawnProb> enemies;
+
+    public int minTilesTrap = 5;
+    public int spawnTrapFactor = 10;
+    public List<SpawnProb> traps;
+
     [System.Serializable]
-    public class Enemy
+    public class SpawnProb
     {
         public int prob;
         public GameObject prefab;
     }
 
-    void Start()
+    public void Start()
     {
-        var spawn = new Vector3Int(2, Random.Range(3, mapSizeY - 5), 0);
-        spawnPoint.position = terrain.CellToWorld(spawn);
-        spawnPoint.position = new Vector3(spawnPoint.position.x, spawnPoint.position.y + 3, 0);
-
-        map = new float[mapSizeX, mapSizeY];
-
-
-        // Build map
-        GenTerrain(spawn);
-        AddEnemies(spawn);
-        FillTerrain();
-
-
-        // Build level from map content
-        for (var x = 0; x < map.GetLength(0); x++)
+        List<List<SpawnProb>> spawnProbs = new List<List<SpawnProb>>();
+        spawnProbs.Add(enemies);
+        spawnProbs.Add(traps);
+        foreach (var spawnlist in spawnProbs)
         {
-            for (var y = 0; y < map.GetLength(1); y++)
+            var prob = 0;
+            foreach (var entity in spawnlist)
             {
-                if (map[x, y] == 1 || map[x, y] == 2)
-                {
-                    terrain.SetTile(new Vector3Int(x, y, 0), tile);
-                }
-                if (map[x, y] == 3)
-                {
-                    //terrain.SetTile(new Vector3Int(x, y, 0), limitTile);
-                    var enemSel = Random.Range(0, 100);
-                    foreach (var enem in Enumerable.Reverse(groundEnemies))
-                    {
-                        if (enemSel < enem.prob)
-                        {
-                            var pos = terrain.CellToWorld(new Vector3Int(x, y + 1, 0));
-                            Instantiate(enem.prefab, pos, Quaternion.identity);
-                        }
-                    }
-
-                }
-                if (x == 0 || x == map.GetLength(0) - 1)
-                {
-                    terrain.SetTile(new Vector3Int(x + ((x == 0) ? -1 : 0), y, 0), limitTile);
-                }
+                entity.prob += prob;
+                prob = entity.prob;
             }
         }
 
+        Init();
 
         // Limits of the map
         var botLeft = terrain.CellToWorld(new Vector3Int(0, 0, 0));
-        var botRight = terrain.CellToWorld(new Vector3Int(mapSizeX-1, 0, 0));
-        var topRight = terrain.CellToWorld(new Vector3Int(mapSizeX-1, mapSizeY, 0));
+        var botRight = terrain.CellToWorld(new Vector3Int(mapSizeX - 1, 0, 0));
+        var topRight = terrain.CellToWorld(new Vector3Int(mapSizeX - 1, mapSizeY, 0));
         var topLeft = terrain.CellToWorld(new Vector3Int(0, mapSizeY, 0));
 
         Vector2[] confLims = { botLeft, botRight, topRight, topLeft };
@@ -104,12 +82,31 @@ public class PCG : MonoBehaviour
         confinement.pathCount = 1;
         confinement.SetPath(0, confLims);
 
-        background.size = new Vector2(mapSizeX, mapSizeY)/2;
-        background.transform.position += new Vector3(mapSizeX, mapSizeY, 0)/2;
+        background.size = new Vector2(mapSizeX, mapSizeY) / 2;
+        background.transform.position += new Vector3(mapSizeX, mapSizeY, 0) / 2;
 
         deathZone.size = new Vector2(mapSizeX, 10);
-        deathZone.transform.position += new Vector3(mapSizeX/2, -5, 0);
+        deathZone.transform.position += new Vector3(mapSizeX / 2, -5, 0);
 
+        //Invoke("BuildLevel", 20.0f);
+        //Invoke("Init", 40.0f);
+    }
+
+    public void Init()
+    {
+        var spawn = new Vector3Int(2, Random.Range(3, mapSizeY - 5), 0);
+        spawnPoint.position = terrain.CellToWorld(spawn);
+        spawnPoint.position = new Vector3(spawnPoint.position.x, spawnPoint.position.y + 3, 0);
+        
+        map = new float[mapSizeX, mapSizeY];
+
+        // Build map
+        GenTerrain(spawn);
+        AddTraps(spawn);
+        AddEnemies(spawn);
+        FillTerrain();
+
+        BuildLevel();
 
         // Astar grid configuration
         foreach (GridGraph graph in AstarPath.active.data.GetUpdateableGraphs())
@@ -119,10 +116,91 @@ public class PCG : MonoBehaviour
             graph.SetDimensions((int)w, (int)h, 0.2f);
             graph.center = new Vector3(mapSizeX / 2, (mapSizeY / 2) + 0, 0);
         }
-
+        
         player.position = spawnPoint.position;
+        if (playerRL != null)
+        {
+            playerRL.position = spawnPoint.position;
+        }
 
         Invoke("Scan", 2.0f);
+
+        //Invoke("BuildLevel", 20.0f);
+    }
+
+    public void BuildLevel()
+    {
+        terrain.ClearAllTiles();
+        var clones = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (var clone in clones)
+        {
+            Destroy(clone);
+        }
+
+        var finishClones = GameObject.FindGameObjectsWithTag("Finish");
+        foreach (var clone in finishClones)
+        {
+            Destroy(clone);
+        }
+        // Build level from map content
+        for (var x = 0; x < map.GetLength(0); x++)
+        {
+            for (var y = 0; y < map.GetLength(1); y++)
+            {
+                if (map[x, y] == 1 || map[x, y] == 2)
+                {
+                    terrain.SetTile(new Vector3Int(x, y, 0), tile);
+                }
+                if (map[x, y] > 10)
+                {
+                    SpawnEntity((int)map[x, y], x, y);
+                }
+                if (map[x, y] == 6)
+                {
+                    Vector3 pos = terrain.CellToWorld(new Vector3Int(x, y, 0));
+                    pos = new Vector3(pos.x, pos.y + 0.8f, 0);
+                    Instantiate(finish, pos, Quaternion.identity);
+                }
+                if (x == 0 || x == map.GetLength(0) - 1)
+                {
+                    terrain.SetTile(new Vector3Int(x + ((x == 0) ? -1 : 0), y, 0), limitTile);
+                }
+            }
+        }
+    }
+
+    int SelectEntityFrom(List<SpawnProb> entities, int x, int y, int offset)
+    {
+        var entitySel = Random.Range(0, 100);
+        for (int i = 0; i < entities.Count; i++)
+        {
+            SpawnProb entity = entities[i];
+            if (entitySel < entity.prob)
+            {
+                return i + offset;
+            }
+        }
+        return 0;
+    }
+
+    void SpawnEntity(int val, int x, int y)
+    {
+        Debug.Log("SPAWN"+val);
+        if (val - 40 >= 0)
+        {
+            SpawnEntityFrom(traps, x, y, (val - 40));
+        }
+        else if (val - 30 >= 0)
+        {
+            SpawnEntityFrom(enemies, x, y + 1, (val - 30));
+        }
+    }
+
+    void SpawnEntityFrom(List<SpawnProb> entities, int x, int y, int i)
+    {
+        SpawnProb entity = entities[i];
+        var pos = terrain.CellToWorld(new Vector3Int(x, y, 0));
+        Instantiate(entity.prefab, pos, Quaternion.identity);
     }
 
     void FillTerrain()
@@ -144,7 +222,7 @@ public class PCG : MonoBehaviour
         }
     }
 
-    void AddEnemies(Vector3Int spawn)
+    void AddToPlatform(Vector3Int spawn, int minTiles, int spawnFact, int val, int fill = -1)
     {
         var start = spawn.y + 3;
         for (var y = 0; y < map.GetLength(1); y++)
@@ -160,14 +238,54 @@ public class PCG : MonoBehaviour
                 {
                     count = 0;
                 }
-                if (count > minTilesEnem)
+                if (count > minTiles)
                 {
                     var enem = Random.Range(0, 100);
-                    if (enem < count * spawnEnemFactor)
+                    if (enem < count * spawnFact)
                     {
-                        map[x, y + 1] = 3;
-                        count = 0;
+                        if (map[x, y + 1] == 0)
+                        {
+                            map[x, y + 1] = val;
+                            if (fill != -1)
+                            {
+                                for (var i = 1; i < count; i++)
+                                {
+                                    map[x - i, y + 1] = fill;
+                                }
+                            }
+                            count = 0;
+                        }
                     }
+                }
+            }
+        }
+    }
+
+    void AddTraps(Vector3Int spawn)
+    {
+        AddToPlatform(spawn, minTilesTrap, spawnTrapFactor, 4);
+        for (var x = 0; x < map.GetLength(0); x++)
+        {
+            for (var y = 0; y < map.GetLength(1); y++)
+            {
+                if (map[x, y] == 4)
+                {
+                    map[x, y] = SelectEntityFrom(traps, x, y, 40);
+                }
+            }
+        }
+    }
+
+    void AddEnemies(Vector3Int spawn)
+    {
+        AddToPlatform(spawn, minTilesEnem, spawnEnemFactor, 3);
+        for (var x = 0; x < map.GetLength(0); x++)
+        {
+            for (var y = 0; y < map.GetLength(1); y++)
+            {
+                if (map[x, y] == 3)
+                {
+                    map[x, y] = SelectEntityFrom(enemies, x, y, 30);
                 }
             }
         }
@@ -190,18 +308,18 @@ public class PCG : MonoBehaviour
             switch (room)
             {
                 case int n when (n <= roomProb):
-                    if (prev == "room") break;
+                    if (roomProb != 100 && prev == "room") break;
                     current = GenRoom(current);
                     prev = "room";
                     break;
 
                 case int n when (n <= roomProb + jumpProb):
-                    if (prev == "jump") break;
+                    if (jumpProb != 100 && prev == "jump") break;
                     current = GenJump(current);
                     prev = "jump";
                     break;
                 case int n when (n <= roomProb + jumpProb + wallJumpProb):
-                    if (prev == "wallJump") break;
+                    if (wallJumpProb != 100 && prev == "wallJump") break;
                     current = GenWallJump(current);
                     prev = "wallJump";
                     break;
@@ -210,6 +328,8 @@ public class PCG : MonoBehaviour
             }
         }
         current = GenRoom(current, mapSizeX - current.x - 1); // always finish in room to place goal
+        // TODO add finish
+        map[current.x - 1, current.y + 1] = 6;
     }
 
     Vector3Int GenAddDot(Vector3Int current, int dist = 1) // helps fitting

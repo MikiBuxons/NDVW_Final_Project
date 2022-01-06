@@ -28,13 +28,14 @@ public class TrunkBehaviour : MonoBehaviour
     [HideInInspector] public bool playerTooClose = false;
     [HideInInspector] public bool isHit = false;
     [HideInInspector] public bool inRange = false;
-    [HideInInspector] public Transform target;
+    [HideInInspector] public GameObject target;
     [HideInInspector] public Animator anim;
     public bool isBouncing = false;
     private bool mustTurn;
     private bool inBorder;
     private Rigidbody2D rb;
     private float timeBtwShots;
+    private bool flipState;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +43,7 @@ public class TrunkBehaviour : MonoBehaviour
         target = null;
         mustPatrol = false;
         Flip();
+        flipState = false;
         mustPatrol = true;
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -67,7 +69,7 @@ public class TrunkBehaviour : MonoBehaviour
     {
         if (mustPatrol && !isHit)
         {
-            mustTurn = !Physics2D.OverlapCircle(groundCheckPos.position, 0.1f, groundLayer) || Physics2D.Raycast(transform.position, Vector3.right * transform.localScale.x, 0.3f, groundLayer);
+            mustTurn = !Physics2D.OverlapCircle(groundCheckPos.position, 0.1f, groundLayer) || Physics2D.Raycast(transform.position, Vector3.right * transform.localScale.x, 0.7f, groundLayer);
         }
 
         if (inRange && playerTooClose && !isHit)
@@ -91,6 +93,7 @@ public class TrunkBehaviour : MonoBehaviour
         {
             mustPatrol = false;
             Flip();
+            flipState = !flipState;
             mustPatrol = true;
         }
         rb.velocity = new Vector2(walkSpeed, rb.velocity.y);
@@ -99,39 +102,28 @@ public class TrunkBehaviour : MonoBehaviour
 
     void Attack()
     {
-        float attackSpeed = walkSpeed / 2f;
+        float attackSpeed = Math.Abs(walkSpeed / 2f);
 
         //Direction calculation
-        Vector2 direction = ((Vector2) target.position - rb.position).normalized;
+        Vector2 direction = ((Vector2) target.transform.position - rb.position).normalized;
         Vector2 force = direction * attackSpeed;
         
         //Movement 
         // !bodyCollider.IsTouchingLayers(groundLayer)
         if (playerTooClose && !inBorder)
         {
-            rb.velocity = new Vector2(force.x, rb.velocity.y);
+            rb.velocity = new Vector2(-force.x, rb.velocity.y);
         }
 
         // Direction graphics handling
         if (directionLookEnabled)
         {
             // Rotation of the shotpoint
-
-            if (!((transform.localScale.x < 0 && shotPoint.transform.rotation.y == 1) 
-                || (transform.localScale.x > 0 && shotPoint.transform.rotation.y == 0)))
-            { 
-                shotPoint.rotation *= Quaternion.Euler(0,180f,0);
-            }
-
-            // Rotation of the enemy
-            if (force.x > 0.001f)
+            if (flipState && direction.x < -0.0001f || !flipState && direction.x > 0.0001f)
             {
-                transform.localScale = new Vector3(-1f * Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-            }else if (force.x < -0.001f)
-            {
-                transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+                flipState = !flipState;
+                Flip();
             }
-            
         }
 
     }

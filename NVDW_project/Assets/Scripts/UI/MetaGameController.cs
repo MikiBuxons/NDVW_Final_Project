@@ -29,7 +29,7 @@ namespace Platformer.UI
 
         void OnEnable()
         {
-            _ToggleMainMenu(showMainCanvas);
+            // _ToggleMainMenu(showMainCanvas);
         }
 
         /// <summary>

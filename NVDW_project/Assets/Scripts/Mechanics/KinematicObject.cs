@@ -1,13 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.MLAgents;
+using Unity.MLAgents.Sensors;
+using Unity.MLAgents.Actuators;
 
 namespace Platformer.Mechanics
 {
     /// <summary>
     /// Implements game physics for some in game entity.
     /// </summary>
-    public class KinematicObject : MonoBehaviour
+    public class KinematicObject : Agent
     {
         /// <summary>
         /// The minimum normal (dot product) considered suitable for the entity sit on.
@@ -29,7 +32,7 @@ namespace Platformer.Mechanics
         /// Is the entity currently sitting on a surface?
         /// </summary>
         /// <value></value>
-        public bool IsGrounded { get; private set; }
+        public bool IsGrounded { get; set; }
         public bool IsDragging;
         public bool JumpedOff=false;
         public bool controlEnabled = true;
@@ -73,37 +76,24 @@ namespace Platformer.Mechanics
             velocity *= 0;
             body.velocity *= 0;
         }
-
-        protected virtual void OnEnable()
-        {
-            body = GetComponent<Rigidbody2D>();
-            body.isKinematic = true;
-        }
-
-        protected virtual void OnDisable()
-        {
-            body.isKinematic = false;
-        }
+        
 
         protected virtual void Start()
-        {
+        {            
+            body = GetComponent<Rigidbody2D>();
+            body.isKinematic = true;
             contactFilter.useTriggers = false;
             contactFilter.SetLayerMask(Physics2D.GetLayerCollisionMask(gameObject.layer));
             contactFilter.useLayerMask = true;
         }
-
-        protected virtual void Update()
-        {
-            targetVelocity = Vector2.zero;
-            ComputeVelocity();
-        }
+        
 
         protected virtual void ComputeVelocity()
         {
 
         }
 
-        protected virtual void FixedUpdate()
+        protected virtual void UpdateRL()
         {
             //if already falling, fall faster than the jump speed, otherwise use normal gravity.
             if (velocity.y < 0)
@@ -114,7 +104,7 @@ namespace Platformer.Mechanics
             }
             else
                 velocity += Physics2D.gravity * Time.deltaTime;
-
+        
             if (!JumpedOff && controlEnabled) 
                 velocity.x= targetVelocity.x;
                 //velocity.x = 0.95f * velocity.x + 0.05f * targetVelocity.x;
@@ -122,8 +112,7 @@ namespace Platformer.Mechanics
                 velocity.x = 0.97f * velocity.x + 0.03f * targetVelocity.x;
             if (velocity.x * currentNormal.x > 0)
                 IsDragging = false;
-            Debug.DrawRay(transform.position, transform.right * 0.5f, Color.red);
-            Debug.DrawRay(transform.position, transform.right * 0.5f, Color.red);
+
             RaycastHit2D hitinfo_upleft = Physics2D.Raycast(transform.position , Vector2.left, 0.5f, whatIsSolid);
             RaycastHit2D hitinfo_downleft = Physics2D.Raycast(transform.position+Vector3.down*0.1f , Vector2.left, 0.5f, whatIsSolid);
             RaycastHit2D hitinfo_upright = Physics2D.Raycast(transform.position , Vector2.right, 0.5f, whatIsSolid);
@@ -132,25 +121,25 @@ namespace Platformer.Mechanics
             {
                 IsDragging = false;
             }
-
+        
             IsGrounded = false;
-
-
+        
+        
             var deltaPosition = velocity * Time.deltaTime;
-
+        
             var moveAlongGround = new Vector2(groundNormal.y, -groundNormal.x);
-
+        
             var move = moveAlongGround * deltaPosition.x;
-
+        
             PerformMovement(move, false);
-
+        
             move = Vector2.up * deltaPosition.y;
-
+        
             PerformMovement(move, true);
-
+        
         }
 
-        void PerformMovement(Vector2 move, bool yMovement)
+        protected void PerformMovement(Vector2 move, bool yMovement)
         {
             var distance = move.magnitude;
 
