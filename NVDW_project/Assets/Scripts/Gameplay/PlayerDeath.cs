@@ -26,7 +26,7 @@ namespace Platformer.Gameplay
             if (player.audioSource && player.ouchAudio)
                 player.audioSource.PlayOneShot(player.ouchAudio);
             player.velocity=Vector2.zero;
-            player.SetReward(-1f);
+            player.SetReward(-100f);
             player.animator.SetBool("dead", true);
             Simulation.Schedule<PlayerSpawn>(0);
             player.EndEpisode();

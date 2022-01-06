@@ -1151,6 +1151,7 @@ MonoBehaviour:
   terrain: {fileID: 891015733}
   spawnPoint: {fileID: 761519188}
   player: {fileID: 4520396399277831}
+  playerRL: {fileID: 0}
   finish: {fileID: 6866741136416379703, guid: f4778a74752ae4b95a96d1b61f678e0a, type: 3}
   confinement: {fileID: 712277757}
   background: {fileID: 2092322893}
@@ -1160,9 +1161,9 @@ MonoBehaviour:
   maxRoomSize: 8
   minJump: 2
   maxJump: 4
-  roomProb: 0
-  jumpProb: 0
-  wallJumpProb: 80
+  roomProb: 70
+  jumpProb: 25
+  wallJumpProb: 5
   maxWallJumpDist: 5
   maxWallJumpHeight: 10
   minTilesEnem: 3
@@ -1754,13 +1755,29 @@ PrefabInstance:
       objectReference: {fileID: 1235291075}
     - target: {fileID: 1261592862148037106, guid: 7b318bf5728269f43957dc6ed358a188,
         type: 3}
+      propertyPath: timePenalty
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1261592862148037106, guid: 7b318bf5728269f43957dc6ed358a188,
+        type: 3}
       propertyPath: wallJumpReward
-      value: 0.001
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1261592862148037106, guid: 7b318bf5728269f43957dc6ed358a188,
         type: 3}
       propertyPath: rightRecordReward
-      value: 0.001
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1261592862148037107, guid: 7b318bf5728269f43957dc6ed358a188,
+        type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 5022602860645237092, guid: 6976ec876f451e20fa33f366b2eba182,
+        type: 3}
+    - target: {fileID: 1261592862148037107, guid: 7b318bf5728269f43957dc6ed358a188,
+        type: 3}
+      propertyPath: m_BehaviorType
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1261592862148037107, guid: 7b318bf5728269f43957dc6ed358a188,
         type: 3}

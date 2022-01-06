@@ -31,7 +31,7 @@ behaviors:
           goal_conditioning_type: hyper
       curiosity:
         gamma: 0.99
-        strength: 0.2
+        strength: 0.1
         network_settings:
           normalize: false
           hidden_units: 128
