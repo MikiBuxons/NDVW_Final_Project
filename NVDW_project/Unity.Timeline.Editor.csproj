@@ -79,8 +79,8 @@
      <Compile Include="Packages\com.unity.timeline\Editor\Manipulators\Cursors\TimelineCursors.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\Signals\SignalUtility.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\Utilities\MarkerModifier.cs" />
-     <Compile Include="Packages\com.unity.timeline\Editor\Manipulators\AddDelete\IAddDeleteItemMode.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\Animation\CurveDataSource.cs" />
+     <Compile Include="Packages\com.unity.timeline\Editor\Manipulators\AddDelete\IAddDeleteItemMode.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\Animation\AnimationPlayableAssetEditor.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\Window\TimelineMarkerHeaderGUI.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\ControlTrack\ControlPlayableAssetEditor.cs" />
@@ -89,9 +89,9 @@
      <Compile Include="Packages\com.unity.timeline\Editor\Tooltip.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\inspectors\TimelineInspectorUtility.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\Manipulators\Sequence\SelectAndMoveItem.cs" />
-     <Compile Include="Packages\com.unity.timeline\Editor\Utilities\Scopes\LabelWidthScope.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\Items\ItemsGroup.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\CurveEditUtility.cs" />
+     <Compile Include="Packages\com.unity.timeline\Editor\Utilities\Scopes\LabelWidthScope.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\TimelineUtility.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\Actions\IMenuName.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\treeview\TimelineTreeViewGUI.cs" />
@@ -99,10 +99,10 @@
      <Compile Include="Packages\com.unity.timeline\Editor\Signals\SignalEmitterEditor.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\State\ISequenceState.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\Window\Modes\TimelineDisabledMode.cs" />
-     <Compile Include="Packages\com.unity.timeline\Editor\Utilities\StyleManager.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\Window\TimelineWindow_Gui.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\Window\TimelineWindow_TimeCursor.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\Analytics\TimelineAnalytics.cs" />
+     <Compile Include="Packages\com.unity.timeline\Editor\Utilities\StyleManager.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\treeview\TimelineDragging.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\treeview\TimelineTreeView.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\Actions\Menus\TimelineContextMenu.cs" />
@@ -115,8 +115,8 @@
      <Compile Include="Packages\com.unity.timeline\Editor\Utilities\TrackResourceCache.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\inspectors\EditorClipFactory.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\treeview\ManipulationsClips.cs" />
-     <Compile Include="Packages\com.unity.timeline\Editor\treeview\Drawers\InfiniteTrackDrawer.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\Manipulators\Sequence\Jog.cs" />
+     <Compile Include="Packages\com.unity.timeline\Editor\treeview\Drawers\InfiniteTrackDrawer.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\Shortcuts.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\Window\TimelineWindowTimeControl.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\Window\TimelineWindow_EditorCallbacks.cs" />
@@ -132,11 +132,11 @@
      <Compile Include="Packages\com.unity.timeline\Editor\treeview\ItemGui\TimelineMarkerGUI.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\Attributes\MenuEntryAttribute.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\Animation\AnimationTrackActions.cs" />
-     <Compile Include="Packages\com.unity.timeline\Editor\Utilities\SpacePartitioner.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\Utilities\Graphics.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\treeview\TrackGui\InlineCurveEditor.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\Recording\TimelineRecording_PlayableAsset.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\Attributes\ActiveInModeAttribute.cs" />
+     <Compile Include="Packages\com.unity.timeline\Editor\Utilities\SpacePartitioner.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\inspectors\TimeFieldDrawer.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\inspectors\TimelineProjectSettings.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\Trackhead.cs" />
@@ -148,16 +148,16 @@
      <Compile Include="Packages\com.unity.timeline\Editor\inspectors\ClipInspector\ClipInspector.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\Animation\AnimationClipExtensions.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\treeview\TrackGui\TrackResizeHandle.cs" />
-     <Compile Include="Packages\com.unity.timeline\Editor\Manipulators\Move\IMoveItemMode.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\treeview\ManipulationsTracks.cs" />
+     <Compile Include="Packages\com.unity.timeline\Editor\Manipulators\Move\IMoveItemMode.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\Utilities\DisplayNameHelper.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\Window\TimelineWindow_PreviewPlayMode.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\Window\Modes\TimelineMode.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\Utilities\AnimatedPropertyUtility.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\Animation\AnimationClipActions.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\TimelineEditor.cs" />
-     <Compile Include="Packages\com.unity.timeline\Editor\inspectors\BuiltInCurvePresets.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\treeview\IRowGUI.cs" />
+     <Compile Include="Packages\com.unity.timeline\Editor\inspectors\BuiltInCurvePresets.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\Manipulators\AddDelete\AddDeleteItemModeReplace.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\Recording\AnimationTrackRecorder.cs" />
      <Compile Include="Packages\com.unity.timeline\Editor\inspectors\GroupTrackInspector.cs" />
@@ -535,29 +535,47 @@
  <Reference Include="UnityEditor.OSXStandalone.Extensions">
  <HintPath>/Applications/Unity/Hub/Editor/2020.3.22f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
  </Reference>
+ <Reference Include="System.IO.Abstractions">
+ <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.ml-agents@2.1.0-exp.1/Plugins/System.IO.Abstractions.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.Plastic.Newtonsoft.Json">
- <HintPath>/Users/cbr4yan/Dev/NDVW/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.collab-proxy@1.13.5/Lib/Editor/PlasticSCM/Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+ <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.collab-proxy@1.13.5/Lib/Editor/PlasticSCM/Unity.Plastic.Newtonsoft.Json.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Plastic.Antlr3.Runtime">
- <HintPath>/Users/cbr4yan/Dev/NDVW/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.collab-proxy@1.13.5/Lib/Editor/PlasticSCM/Unity.Plastic.Antlr3.Runtime.dll</HintPath>
+ <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.collab-proxy@1.13.5/Lib/Editor/PlasticSCM/Unity.Plastic.Antlr3.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="unityplastic">
- <HintPath>/Users/cbr4yan/Dev/NDVW/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.collab-proxy@1.13.5/Lib/Editor/PlasticSCM/unityplastic.dll</HintPath>
+ <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.collab-proxy@1.13.5/Lib/Editor/PlasticSCM/unityplastic.dll</HintPath>
  </Reference>
  <Reference Include="System.IO.Compression.FileSystem">
- <HintPath>/Users/cbr4yan/Dev/NDVW/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.connect.share@4.1.1/Plugins/System.IO.Compression.FileSystem.dll</HintPath>
+ <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.connect.share@4.1.1/Plugins/System.IO.Compression.FileSystem.dll</HintPath>
+ </Reference>
+ <Reference Include="Google.Protobuf">
+ <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.barracuda@2.0.0-pre.3/Barracuda/Runtime/Plugins/ProtoBuffer/Google.Protobuf.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Burst.Unsafe">
+ <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.burst@1.3.4/Unity.Burst.Unsafe.dll</HintPath>
  </Reference>
  <Reference Include="Pathfinding.Ionic.Zip.Reduced">
- <HintPath>/Users/cbr4yan/Dev/NDVW/NDVW_Final_Project/NVDW_project/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+ <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project/NVDW_project/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
  </Reference>
  <Reference Include="log4netPlastic">
- <HintPath>/Users/cbr4yan/Dev/NDVW/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.collab-proxy@1.13.5/Lib/Editor/PlasticSCM/log4netPlastic.dll</HintPath>
+ <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.collab-proxy@1.13.5/Lib/Editor/PlasticSCM/log4netPlastic.dll</HintPath>
+ </Reference>
+ <Reference Include="System.IO.Abstractions.TestingHelpers">
+ <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.ml-agents@2.1.0-exp.1/Plugins/System.IO.Abstractions.TestingHelpers.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Interactive.Async">
+ <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.ml-agents@2.1.0-exp.1/Plugins/ProtoBuffer/System.Interactive.Async.dll</HintPath>
+ </Reference>
+ <Reference Include="Grpc.Core">
+ <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.ml-agents@2.1.0-exp.1/Plugins/ProtoBuffer/Grpc.Core.dll</HintPath>
  </Reference>
  <Reference Include="Newtonsoft.Json">
- <HintPath>/Users/cbr4yan/Dev/NDVW/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
+ <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
- <HintPath>/Users/cbr4yan/Dev/NDVW/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
+ <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>/Applications/Unity/Hub/Editor/2020.3.22f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>

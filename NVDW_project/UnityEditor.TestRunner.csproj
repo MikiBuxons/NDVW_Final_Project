@@ -59,8 +59,8 @@
      <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\TestRunner\Messages\EnterPlayMode.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\TestRun\Tasks\PrebuildSetupTask.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\TestResultSerializer.cs" />
-     <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\TestRunner\EditModeRunner.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\TestRunner\Utils\IEditorCompilationInterfaceProxy.cs" />
+     <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\TestRunner\EditModeRunner.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\TestLaunchers\RemoteTestResultReciever.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\GUI\TestRunnerResult.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\TestLaunchers\RuntimeTestLauncherBase.cs" />
@@ -108,8 +108,8 @@
      <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\UnityTestProtocol\ITestRunnerApiMapper.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\TestLaunchers\PlatformSetup\StadiaPlatformSetup.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\Api\TestMode.cs" />
-     <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\CommandLineTest\LogSavingCallbacks.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\NUnitExtension\Attributes\ITestPlayerBuildModifier.cs" />
+     <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\CommandLineTest\LogSavingCallbacks.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\Api\CallbacksDelegator.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\TestRun\TestRunCanceledException.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\GUI\IGuiHelper.cs" />
@@ -175,8 +175,8 @@
      <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\TestRunner\EnumeratorStepHelper.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\TestLaunchers\PrebuildSetupAttributeFinder.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\TestRun\Tasks\SaveModiedSceneTask.cs" />
-     <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\AssemblyInfo.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\TestRun\Tasks\PerformUndoTask.cs" />
+     <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\AssemblyInfo.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\TestRunner\Utils\EditorCompilationInterfaceProxy.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\TestRun\Tasks\FileCleanupVerifierTaskBase.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\Api\TestAdaptorFactory.cs" />
@@ -201,11 +201,11 @@
      <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\CommandLineTest\ExitCallbacks.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\TestRunner\Utils\TestListCacheData.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\CommandLineTest\RunSettings.cs" />
-     <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\GUI\TestListTreeView\TestListTreeViewDataSource.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\Api\TestRunnerApi.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\TestLaunchers\TestLauncherBase.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\Api\IErrorCallbacks.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\UnityTestProtocol\IUtpLogger.cs" />
+     <Compile Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\GUI\TestListTreeView\TestListTreeViewDataSource.cs" />
      <None Include="Packages\com.unity.test-framework\UnityEditor.TestRunner\UnityEditor.TestRunner.asmdef" />
  <Reference Include="UnityEngine">
  <HintPath>/Applications/Unity/Hub/Editor/2020.3.22f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -436,7 +436,7 @@
  <HintPath>/Applications/Unity/Hub/Editor/2020.3.22f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
- <HintPath>/Users/cbr4yan/Dev/NDVW/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
+ <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>/Applications/Unity/Hub/Editor/2020.3.22f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>

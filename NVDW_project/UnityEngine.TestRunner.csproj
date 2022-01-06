@@ -68,15 +68,15 @@
      <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Commands\TestCommandPcHelper.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\ConstructDelegator.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Attributes\ConditionalIgnoreAttribute.cs" />
-     <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\StacktraceFilter.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Assertions\LogScope\ILogScope.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\PostBuildCleanupAttribute.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\TestRunner\Messages\IEditModeTestYieldInstruction.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\TestRunner\PlaymodeTestsController.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\TestRunner\RemoteHelpers\RemoteTestData.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Runner\PlaymodeWorkItemFactory.cs" />
-     <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\TestRunner\Callbacks\TestResultRenderer.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Commands\EnumerableRepeatedTestCommand.cs" />
+     <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\StacktraceFilter.cs" />
+     <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\TestRunner\Callbacks\TestResultRenderer.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\AssemblyProvider\PlayerTestAssemblyProvider.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Runner\WorkItemFactory.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Commands\EnumerableTestState.cs" />
@@ -128,8 +128,8 @@
      <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Commands\EnumerableSetUpTearDownCommand.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\MonoBehaviourTest\IMonoBehaviourTest.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\IPrebuildSceneSetup.cs" />
-     <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Attributes\UnitySetUpAttribute.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Runner\UnityWorkItemDataHolder.cs" />
+     <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Attributes\UnitySetUpAttribute.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\MonoBehaviourTest\MonoBehaviourTest.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\TestRunner\Callbacks\RemoteTestResultSender.cs" />
      <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\AssemblyProvider\IAssemblyLoadProxy.cs" />
@@ -388,7 +388,7 @@
  <HintPath>/Applications/Unity/Hub/Editor/2020.3.22f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
- <HintPath>/Users/cbr4yan/Dev/NDVW/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
+ <HintPath>/Users/cbr4yan/Desktop/NDVW_Final_Project/NVDW_project/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>/Applications/Unity/Hub/Editor/2020.3.22f1/Unity.app/Contents/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
