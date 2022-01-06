@@ -34,7 +34,7 @@ public class PlayerMenu : MonoBehaviour
 
         }
 
-        if (Input.GetKey("up") && CheckGround.isGrounded) {
+        if (Input.GetKey("space") && CheckGround.isGrounded) {
             rb2D.velocity = new Vector2(rb2D.velocity.x, jumpSpeed);
         }
 
