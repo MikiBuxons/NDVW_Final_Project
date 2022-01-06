@@ -1,0 +1,47 @@
+{
+    "Visual": {
+        "checkpoints": [
+            {
+                "steps": 49913,
+                "file_path": "results/prova_saw_3/Visual/Visual-49913.onnx",
+                "reward": -1775.2341958999634,
+                "creation_time": 1641413893.3090174,
+                "auxillary_file_paths": [
+                    "results/prova_saw_3/Visual/Visual-49913.pt"
+                ]
+            },
+            {
+                "steps": 99915,
+                "file_path": "results/prova_saw_3/Visual/Visual-99915.onnx",
+                "reward": -1856.3148640950521,
+                "creation_time": 1641415484.4709888,
+                "auxillary_file_paths": [
+                    "results/prova_saw_3/Visual/Visual-99915.pt"
+                ]
+            },
+            {
+                "steps": 123586,
+                "file_path": "results/prova_saw_3/Visual/Visual-123586.onnx",
+                "reward": null,
+                "creation_time": 1641416747.9234407,
+                "auxillary_file_paths": [
+                    "results/prova_saw_3/Visual/Visual-123586.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 123586,
+            "file_path": "results/prova_saw_3/Visual.onnx",
+            "reward": null,
+            "creation_time": 1641416747.9234407,
+            "auxillary_file_paths": [
+                "results/prova_saw_3/Visual/Visual-123586.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.27.0",
+        "torch_version": "1.8.1+cu102"
+    }
+}
