@@ -402,8 +402,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collider2d: {fileID: 175810579655183751}
-  enemyReward: 0.001
-  damagePenalty: 0.0005
+  enemyReward: 5
+  damagePenalty: 5
 --- !u!1 &175810579699115377
 GameObject:
   m_ObjectHideFlags: 0

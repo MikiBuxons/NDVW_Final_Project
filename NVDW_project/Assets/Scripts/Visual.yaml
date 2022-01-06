@@ -26,6 +26,8 @@ behaviors:
     time_horizon: 128
     summary_freq: 10000
     threaded: true
+    checkpoint_interval: 50000
+    init_path: Assets/RLBehaviour/
 #    behavioral_cloning:
 #      demo_path: Assets/Demonstrations
 #      strength: 0.5

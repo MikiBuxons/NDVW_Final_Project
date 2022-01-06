@@ -2,31 +2,58 @@
     "Visual": {
         "checkpoints": [
             {
-                "steps": 49966,
-                "file_path": "results/prova_wall_1/Visual/Visual-49966.onnx",
-                "reward": -824.1124089017827,
-                "creation_time": 1641471180.3002846,
+                "steps": 99991,
+                "file_path": "results/prova_wall_1/Visual/Visual-99991.onnx",
+                "reward": -73.11372722831427,
+                "creation_time": 1641478308.7855122,
                 "auxillary_file_paths": [
-                    "results/prova_wall_1/Visual/Visual-49966.pt"
+                    "results/prova_wall_1/Visual/Visual-99991.pt"
                 ]
             },
             {
-                "steps": 98501,
-                "file_path": "results/prova_wall_1/Visual/Visual-98501.onnx",
-                "reward": -767.37034236363,
-                "creation_time": 1641472793.8141563,
+                "steps": 149991,
+                "file_path": "results/prova_wall_1/Visual/Visual-149991.onnx",
+                "reward": -84.437895147424,
+                "creation_time": 1641479573.5154948,
                 "auxillary_file_paths": [
-                    "results/prova_wall_1/Visual/Visual-98501.pt"
+                    "results/prova_wall_1/Visual/Visual-149991.pt"
+                ]
+            },
+            {
+                "steps": 199970,
+                "file_path": "results/prova_wall_1/Visual/Visual-199970.onnx",
+                "reward": -91.2251850410744,
+                "creation_time": 1641480835.7427585,
+                "auxillary_file_paths": [
+                    "results/prova_wall_1/Visual/Visual-199970.pt"
+                ]
+            },
+            {
+                "steps": 249901,
+                "file_path": "results/prova_wall_1/Visual/Visual-249901.onnx",
+                "reward": -7.805000275373459,
+                "creation_time": 1641482090.7985547,
+                "auxillary_file_paths": [
+                    "results/prova_wall_1/Visual/Visual-249901.pt"
+                ]
+            },
+            {
+                "steps": 251945,
+                "file_path": "results/prova_wall_1/Visual/Visual-251945.onnx",
+                "reward": -40.37333377202352,
+                "creation_time": 1641482133.474342,
+                "auxillary_file_paths": [
+                    "results/prova_wall_1/Visual/Visual-251945.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 98501,
+            "steps": 251945,
             "file_path": "results/prova_wall_1/Visual.onnx",
-            "reward": -767.37034236363,
-            "creation_time": 1641472793.8141563,
+            "reward": -40.37333377202352,
+            "creation_time": 1641482133.474342,
             "auxillary_file_paths": [
-                "results/prova_wall_1/Visual/Visual-98501.pt"
+                "results/prova_wall_1/Visual/Visual-251945.pt"
             ]
         }
     },

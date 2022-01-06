@@ -73,7 +73,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounceStrength: 3
-  damagePenalty: 0.0005
+  damagePenalty: 5
 --- !u!61 &7612119750121467951
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -339,7 +339,7 @@ MonoBehaviour:
   destroyParticles: {fileID: 4233806550317191336}
   jumpForce: 3
   lifes: 1
-  enemyReward: 0.001
+  enemyReward: 1
 --- !u!1 &4233806550317191336
 GameObject:
   m_ObjectHideFlags: 0
