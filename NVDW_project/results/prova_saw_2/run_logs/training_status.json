@@ -1,0 +1,65 @@
+{
+    "Visual": {
+        "checkpoints": [
+            {
+                "steps": 49951,
+                "file_path": "results/prova_saw_2/Visual/Visual-49951.onnx",
+                "reward": -628.4957758528845,
+                "creation_time": 1641408888.948009,
+                "auxillary_file_paths": [
+                    "results/prova_saw_2/Visual/Visual-49951.pt"
+                ]
+            },
+            {
+                "steps": 99892,
+                "file_path": "results/prova_saw_2/Visual/Visual-99892.onnx",
+                "reward": -666.3749475700911,
+                "creation_time": 1641409641.3070357,
+                "auxillary_file_paths": [
+                    "results/prova_saw_2/Visual/Visual-99892.pt"
+                ]
+            },
+            {
+                "steps": 149940,
+                "file_path": "results/prova_saw_2/Visual/Visual-149940.onnx",
+                "reward": 670.9680488340316,
+                "creation_time": 1641410352.198692,
+                "auxillary_file_paths": [
+                    "results/prova_saw_2/Visual/Visual-149940.pt"
+                ]
+            },
+            {
+                "steps": 199963,
+                "file_path": "results/prova_saw_2/Visual/Visual-199963.onnx",
+                "reward": -727.7167199452718,
+                "creation_time": 1641411061.4911299,
+                "auxillary_file_paths": [
+                    "results/prova_saw_2/Visual/Visual-199963.pt"
+                ]
+            },
+            {
+                "steps": 230284,
+                "file_path": "results/prova_saw_2/Visual/Visual-230284.onnx",
+                "reward": 231.74224055897105,
+                "creation_time": 1641411592.6666806,
+                "auxillary_file_paths": [
+                    "results/prova_saw_2/Visual/Visual-230284.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 230284,
+            "file_path": "results/prova_saw_2/Visual.onnx",
+            "reward": 231.74224055897105,
+            "creation_time": 1641411592.6666806,
+            "auxillary_file_paths": [
+                "results/prova_saw_2/Visual/Visual-230284.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.27.0",
+        "torch_version": "1.8.1+cu102"
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "Visual": {
+        "checkpoints": [
+            {
+                "steps": 129256,
+                "file_path": "results/prova1/Visual/Visual-129256.onnx",
+                "reward": -23850.0,
+                "creation_time": 1641302588.5213196,
+                "auxillary_file_paths": [
+                    "results/prova1/Visual/Visual-129256.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 129256,
+            "file_path": "results/prova1/Visual.onnx",
+            "reward": -23850.0,
+            "creation_time": 1641302588.5213196,
+            "auxillary_file_paths": [
+                "results/prova1/Visual/Visual-129256.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.27.0",
+        "torch_version": "1.8.1+cu102"
+    }
+}
