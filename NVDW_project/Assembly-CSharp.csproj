@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\Mechanics\SpawnPoint.cs" />
      <Compile Include="Assets\Scripts\RinoScripts\RinoDamage.cs" />
      <Compile Include="Assets\Scripts\RinoScripts\RinoAttack.cs" />
+     <Compile Include="Assets\Scripts\Back.cs" />
      <Compile Include="Assets\Scripts\TrunkScripts\TrunkHit.cs" />
      <Compile Include="Assets\Scripts\Gameplay\PlayerEnemyCollision.cs" />
      <Compile Include="Assets\Scripts\Core\HeapQueue.cs" />
@@ -88,6 +89,7 @@
      <Compile Include="Assets\Scripts\Mechanics\TokenController.cs" />
      <Compile Include="Assets\Scripts\Mechanics\GoalController.cs" />
      <Compile Include="Assets\Scripts\TrunkScripts\TrunkBehaviour.cs" />
+     <Compile Include="Assets\Scripts\PlayerMenu.cs" />
      <Compile Include="Assets\Scripts\Gameplay\PlayerEnteredVictoryZone.cs" />
      <Compile Include="Assets\Scripts\SlimeScrips\SlimeBehaviour.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Finish.cs" />
@@ -97,6 +99,7 @@
      <Compile Include="Assets\Scripts\Gameplay\PlayerJumped.cs" />
      <Compile Include="Assets\Scripts\Gameplay\PlayerEnteredDeathZone.cs" />
      <Compile Include="Assets\Scripts\JumpDamage.cs" />
+     <Compile Include="Assets\Scripts\CheckGround.cs" />
      <Compile Include="Assets\Scripts\Core\Simulation.Event.cs" />
      <Compile Include="Assets\Scripts\RinoScripts\TriggerAreaCheck.cs" />
      <Compile Include="Assets\Scripts\Core\Fuzzy.cs" />

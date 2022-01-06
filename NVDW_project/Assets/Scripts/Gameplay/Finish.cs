@@ -17,7 +17,7 @@ public class Finish : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.CompareTag("Player")) {
-            // CompleteLevel();
+            CompleteLevel();
             var player = collision.gameObject.GetComponent<PlayerController>();
             player.AddReward(victoryReward);
             player.EndEpisode();
@@ -26,6 +26,6 @@ public class Finish : MonoBehaviour
     }
 
     private void CompleteLevel() {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("MainMenu");
     }
 }
