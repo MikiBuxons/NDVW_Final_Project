@@ -1018,9 +1018,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1208144818949858, guid: 7b318bf5728269f43957dc6ed358a188, type: 3}
+      propertyPath: m_Width
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 1208144818949858, guid: 7b318bf5728269f43957dc6ed358a188, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 251430890}
+    - target: {fileID: 1208144818949858, guid: 7b318bf5728269f43957dc6ed358a188, type: 3}
+      propertyPath: m_ObservationStacks
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1208144818949859, guid: 7b318bf5728269f43957dc6ed358a188, type: 3}
       propertyPath: Record
       value: 0
@@ -1049,6 +1057,17 @@ PrefabInstance:
         type: 3}
       propertyPath: gravityModifier
       value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1261592862148037107, guid: 7b318bf5728269f43957dc6ed358a188,
+        type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 5022602860645237092, guid: e0009d5d9075bf18db551b2a65c5ef64,
+        type: 3}
+    - target: {fileID: 1261592862148037107, guid: 7b318bf5728269f43957dc6ed358a188,
+        type: 3}
+      propertyPath: m_BehaviorType
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1267290015224475670, guid: 7b318bf5728269f43957dc6ed358a188,
         type: 3}
@@ -1167,12 +1186,12 @@ MonoBehaviour:
   minJump: 2
   maxJump: 4
   roomProb: 50
-  jumpProb: 30
-  wallJumpProb: 20
+  jumpProb: 50
+  wallJumpProb: 0
   maxWallJumpDist: 5
   maxWallJumpHeight: 10
   minTilesEnem: 3
-  spawnEnemFactor: 10
+  spawnEnemFactor: 0
   enemies:
   - prob: 40
     prefab: {fileID: 7542552129220136101, guid: 783eec7f55766744192f1b085f582437,
@@ -1186,7 +1205,7 @@ MonoBehaviour:
     prefab: {fileID: 4233806549995468957, guid: 78e66adbb80d04bf4a5f0e07fdeba5ed,
       type: 3}
   minTilesTrap: 5
-  spawnTrapFactor: 10
+  spawnTrapFactor: 0
   traps:
   - prob: 100
     prefab: {fileID: 3061445978727419209, guid: 650f6c1df72c84bc394ea09409658ece,
